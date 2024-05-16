@@ -1,12 +1,13 @@
-import { useState } from 'react'
-import HamburgerMenu from '../assets/mdi_hamburger-menu.svg'
+import { useState } from 'react';
+import HamburgerMenu from '../assets/mdi_hamburger-menu.svg';
 
 const NavLinks = ({ isOpen }) => {
 	return (
 		<div
-			className={`absolute top-20 left-1/2 transform -translate-x-1/2 bg-slate-500 md:relative md:top-0 md:transform-none md:left-0 md:bg-transparent ${
+			className={`absolute top-[100px] right-0 transform-translate-x-1/2 bg-[rgba(0,0,0,0.8)] md:relative md:top-0 md:transform-none md:left-0 md:bg-transparent ${
 				isOpen ? 'block' : 'hidden'
-			} md:block`}>
+			} md:block`}
+		>
 			<ul className='md:flex md:space-x-6 lg:space-x-12'>
 				<li className='cursor-pointer'>O nas</li>
 				<li className='cursor-pointer'>Realizacje</li>
@@ -17,15 +18,15 @@ const NavLinks = ({ isOpen }) => {
 				<button>Kontakt</button>
 			</div>
 		</div>
-	)
-}
+	);
+};
 
 export default function Nav() {
-	const [isOpen, setIsOpen] = useState(false)
+	const [isOpen, setIsOpen] = useState(false);
 
 	const toggleNavbar = () => {
-		setIsOpen(!isOpen)
-	}
+		setIsOpen(!isOpen);
+	};
 
 	return (
 		<nav className='py-4 fixed w-full z-50'>
@@ -40,5 +41,5 @@ export default function Nav() {
 				</button>
 			</div>
 		</nav>
-	)
+	);
 }
