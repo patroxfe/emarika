@@ -40,7 +40,7 @@ export default function Summary() {
         <div>
           {questions.map((item, index) => (
             <div key={index}>
-              <div className={`[box-shadow:_5px_5px_10px_rgb(0_0_0_/_25%)] rounded-xl flex mt-10 p-5 ${item.fade}`}>
+              <div className={`[box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] rounded-xl flex mt-10 p-5 ${item.fade}`}>
                 <div className='flex items-center justify-center bg-gradient-to-r w-14 h-14 mr-3 rounded-full flex-shrink-0'>
                   <img src={item.icon} alt='icon' className='w-9 h-9' />
                 </div>

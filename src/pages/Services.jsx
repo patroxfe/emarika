@@ -16,10 +16,10 @@ export default function Services() {
 				{services.map((item, index) => (
 					<div
 						key={index}
-						className='[box-shadow:_5px_5px_10px_rgb(0_0_0_/_25%)] text-center py-8 rounded cursor-pointer relative'>
+						className='[box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] text-center py-10 rounded cursor-pointer relative'>
 						<div
-							className={`w-12 h-12 rounded-full absolute bottom-[4.5rem] left-1/2 transform -translate-x-1/2 bg-gradient-to-r ${item.fade}`}></div>
-						<h4 className='text-mainText text-xl font-medium'>{item.serviceName}</h4>
+							className={`w-14 h-14 rounded-full absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-gradient-to-r ${item.fade}`}></div>
+						<h4 className='text-mainText text-xl font-semibold'>{item.serviceName}</h4>
 					</div>
 				))}
 			</div>
