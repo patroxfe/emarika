@@ -20,7 +20,7 @@ export default function AboutUs() {
 			<h2 className='text-mainText font-bold text-4xl text-center'>O nas</h2>
 			<div className='my-14 max-w-2xl m-auto'>
 				{questions.map((item, index) => (
-					<div key={index} className='border-b-[1px] border-borderCol quotes'>
+					<div key={index} className='border-b-[1px] border-stone-300 quotes'>
 						<div 
 							className=' py-3 flex justify-between items-center cursor-pointer'
 							onClick={() => toggleQuestion(index)}
