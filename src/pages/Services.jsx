@@ -14,7 +14,8 @@ export default function Services() {
 
 			<div className='flex flex-col space-y-12 my-14'>
 				{services.map((item, index) => (
-					<div key={index} className='[box-shadow:_5px_5px_10px_rgb(0_0_0_/_25%)] text-center py-6 rounded cursor-pointer'>
+					<div key={index} className='[box-shadow:_5px_5px_10px_rgb(0_0_0_/_25%)] text-center py-6 rounded cursor-pointer relative'>
+                        <div className="bg-yellow-400 w-12 h-12 rounded-full absolute bottom-12"></div>
 						<h4 className='text-mainText text-xl font-medium'>{item.serviceName}</h4>
 					</div>
 				))}
