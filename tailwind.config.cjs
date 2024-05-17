@@ -7,20 +7,21 @@ module.exports = {
 				customGray: '#F8F8F8',
 				mainText: '#0A2540',
 				borderCol: '#8593A2',
-				
+				buttonText: '#B87BD8',
+				secondText: '#8997A6',
+
 				firstViolet: '#E36FFB',
 				secondViolet: '#B351FC',
-	
+
 				firstBlue: '#73D6FD',
 				secondBlue: '#3D9EFE',
-	
+
 				firstRed: '#FE70AA',
 				secondRed: '#FC4E67',
-	
+
 				firstGreen: '#C0FE70',
 				secondGreen: '#4EFCBD',
 			},
-
 		},
 	},
 	plugins: [],

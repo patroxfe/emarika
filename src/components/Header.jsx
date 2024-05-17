@@ -11,7 +11,7 @@ export default function Header() {
 			/>
 			<section className=' text-center z-30 lg:flex'>
 				<div className='lg:min-w-[30%] lg:max-w-[50%]'>
-					<h1 className='font-extrabold text-3xl pt-[140px] leading-10 [text-shadow:_5px_5px_10px_rgb(0_0_0_/_25%)]'>
+					<h1 className='font-extrabold text-3xl pt-[130px] leading-10 [text-shadow:_5px_5px_10px_rgb(0_0_0_/_25%)]'>
 						Tworzymy nowoczesne strony internetowe na zamówienie
 					</h1>
 					<img
@@ -19,13 +19,13 @@ export default function Header() {
 						src={PhoneLaptop}
 						alt='Projekt na monitorze oraz na telefonie, wizualizuje naszą cudowną pracę'
 					/>
-					<p className='pt-6 text-lg leading-6 font-'>
-						Jesteśmy zespołem pasjonatów dla których tworzenie stron
+					<p className='pt-6 text-lg leading-6 font-light text-white'>
+						Jesteśmy zespołem pasjonatów, dla których tworzenie stron
 						internetowych to sztuka. Nasza misja to przekształcanie Twoich
 						pomysłów w witrualną rzeczywistość, która zachwyca i przyciąga
 						uwagę!
 					</p>
-					<button className='bg-white text-fuchsia-400 text-lg font-semibold m-8 py-1 px-5 rounded mb-[100px]'>
+					<button className='bg-white drop-shadow-lg text-buttonText text-lg font-semibold m-8 py-2 px-5 rounded mb-[100px]'>
 						Sprawdź ofertę!
 					</button>
 				</div>
