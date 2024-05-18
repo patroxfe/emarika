@@ -6,6 +6,7 @@ import Services from './pages/Services'
 import Header from './components/Header'
 import Implementation from './pages/Implementation'
 import Pricing from './pages/Pricing'
+import QnA from './pages/QnA'
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 			<Services />
 			<Implementation />
 			<Pricing />
+			<QnA />
 		</>
 	)
 }
