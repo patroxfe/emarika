@@ -20,6 +20,7 @@ const NavLinks = ({ isOpen }) => {
 	)
 }
 
+
 export default function Nav() {
 	const [isOpen, setIsOpen] = useState(false)
 	const [scrollPosition, setScrollPosition] = useState(0)

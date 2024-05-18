@@ -37,7 +37,7 @@ export default function Summary() {
   return (
     <>
       <section className='bg-white pt-5 pb-10 lg:flex lg:flex-row-reverse'>
-        <div>
+        <div className='wrapper'>
           {questions.map((item, index) => (
             <div key={index}>
               <div className={`[box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] rounded-xl flex mt-10 p-5 ${item.fade}`}>
