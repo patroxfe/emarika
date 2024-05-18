@@ -9,6 +9,7 @@ module.exports = {
 				borderCol: '#8593A2',
 				buttonText: '#B87BD8',
 				secondText: '#8997A6',
+				thirdText: '#5F7182',
 
 				firstViolet: '#E36FFB',
 				secondViolet: '#B351FC',

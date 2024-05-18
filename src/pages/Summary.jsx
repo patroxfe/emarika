@@ -28,7 +28,7 @@ export default function Summary() {
     },
     {
       title: 'Gwarancja',
-      description: 'Gwarantujemy bezproblemowość i możlowości ewentualnych bezpłatnych zmian w razie różnorodnych problemów. Nie musisz się martwić o przyszłość, załatwimy to!',
+      description: 'Gwarantujemy bezproblemowość i możliwości ewentualnych bezpłatnych zmian w razie różnorodnych problemów. Nie musisz się martwić o przyszłość, załatwimy to!',
       fade: 'from-firstGreen to-secondGreen',
       icon: CrownImg
     },

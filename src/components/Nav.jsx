@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import HamburgerMenu from '../assets/mdi_hamburger-menu.svg'
 
 const NavLinks = ({ isOpen }) => {
 	return (
 		<div
-			className={`absolute top-20 left-1/2 transform -translate-x-1/2 bg-neutral-800 md:relative md:top-0 md:transform-none md:left-0 md:bg-transparent p-5 w-full ${
+			className={`absolute top-[90px] left-1/2 transform -translate-x-1/2 bg-neutral-800 md:relative md:top-0 md:transform-none md:left-0 md:bg-transparent p-5 w-full ${
 				isOpen ? 'block' : 'hidden'
 			} md:block`}>
 			<ul className='md:flex md:space-x-6 lg:space-x-12 space-y-4 text-center px-9'>
@@ -22,13 +22,34 @@ const NavLinks = ({ isOpen }) => {
 
 export default function Nav() {
 	const [isOpen, setIsOpen] = useState(false)
+	const [scrollPosition, setScrollPosition] = useState(0)
 
 	const toggleNavbar = () => {
 		setIsOpen(!isOpen)
 	}
 
+	const handleScroll = () => {
+		const position = window.scrollY
+		setScrollPosition(position)
+	}
+
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll)
+		return () => {
+			window.removeEventListener('scroll', handleScroll)
+		}
+	}, [])
+
+	const getNavbarColor = () => {
+		const maxScroll = 200
+		const opacity = Math.min(scrollPosition / maxScroll, 0.85)
+		return `rgba(34, 34, 34, ${opacity})`
+	}
+
 	return (
-		<nav className='py-4 fixed w-full z-50'>
+		<nav
+			style={{ backgroundColor: getNavbarColor() }}
+			className='py-4 fixed w-full z-50 transition-colors duration-300'>
 			<div className='wrapper flex justify-between items-center'>
 				<h1 className='text-xl font-semibold'>eMarika.pl</h1>
 				<NavLinks isOpen={isOpen} />

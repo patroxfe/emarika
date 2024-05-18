@@ -21,8 +21,8 @@ export default function Header() {
 					/>
 					<p className='pt-6 text-lg leading-6 font-light text-white'>
 						Jesteśmy zespołem pasjonatów, dla których tworzenie stron
-						internetowych to sztuka. Nasza misja to przekształcanie Twoich
-						pomysłów w witrualną rzeczywistość, która zachwyca i przyciąga
+						internetowych to sztuka. Nasza misja to przekształcenie Twoich
+						pomysłów w wirtualną rzeczywistość, która zachwyca i przyciąga
 						uwagę!
 					</p>
 					<button className='bg-white drop-shadow-lg text-buttonText text-lg font-semibold m-8 py-2 px-5 rounded mb-[100px]'>
