@@ -1,13 +1,13 @@
-import { useState, useRef, useEffect } from 'react'
-import Arrow from '../assets/arrow.svg'
+import { useState, useRef, useEffect } from 'react';
+import Arrow from '../assets/arrow.svg';
 
 export default function QnA() {
-	const [openQuestion, setOpenQuestion] = useState(null)
-	const answerRefs = useRef([])
+	const [openQuestion, setOpenQuestion] = useState(null);
+	const answerRefs = useRef([]);
 
-	const toggleQuestion = index => {
-		setOpenQuestion(openQuestion === index ? null : index)
-	}
+	const toggleQuestion = (index) => {
+		setOpenQuestion(openQuestion === index ? null : index);
+	};
 
 	const questions = [
 		{
@@ -50,41 +50,58 @@ export default function QnA() {
 			answer:
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
 		},
-	]
+	];
 
 	useEffect(() => {
 		answerRefs.current.forEach((ref, index) => {
 			if (ref) {
-				ref.style.maxHeight = openQuestion === index ? `${ref.scrollHeight}px` : '0px'
+				ref.style.maxHeight =
+					openQuestion === index ? `${ref.scrollHeight}px` : '0px';
 			}
-		})
-	}, [openQuestion])
+		});
+	}, [openQuestion]);
 
 	return (
-		<section className='bg-customGray m-auto py-8'>
-			<h2 className='text-mainText font-bold text-3xl text-center'>Q&A</h2>
-			<div className='my-14 max-w-2xl m-auto'>
-				{questions.map((item, index) => (
-					<div key={index} className='border-b border-stone-300'>
-						<div
-							className='py-3 flex justify-between items-center cursor-pointer'
-							onClick={() => toggleQuestion(index)}>
-							<p className='text-mainText font-semibold text-xl max-w-[75%]'>{item.question}</p>
-							<img
-								src={Arrow}
-								alt='Strzałka rozwijająca odpowiedź'
-								className={`transform transition-transform duration-300 ${openQuestion === index ? 'rotate-180' : ''}`}
-							/>
+		<>
+			<section className='bg-customGray m-auto py-8'>
+				<h2 className='text-mainText font-bold text-3xl text-center'>Q&A</h2>
+				<div className='my-14 max-w-2xl m-auto'>
+					{questions.map((item, index) => (
+						<div key={index} className='border-b border-stone-300'>
+							<div
+								className='py-3 flex justify-between items-center cursor-pointer'
+								onClick={() => toggleQuestion(index)}
+							>
+								<p className='text-mainText font-semibold text-xl max-w-[75%]'>
+									{item.question}
+								</p>
+								<img
+									src={Arrow}
+									alt='Strzałka rozwijająca odpowiedź'
+									className={`transform transition-transform duration-300 ${
+										openQuestion === index ? 'rotate-180' : ''
+									}`}
+								/>
+							</div>
+							<div
+								ref={(el) => (answerRefs.current[index] = el)}
+								className='overflow-hidden transition-all duration-300'
+								style={{
+									maxHeight:
+										openQuestion === index
+											? `${answerRefs.current[index]?.scrollHeight}px`
+											: '0px',
+								}}
+							>
+								<p className='text-mainText py-2'>{item.answer}</p>
+							</div>
 						</div>
-						<div
-							ref={el => (answerRefs.current[index] = el)}
-							className='overflow-hidden transition-all duration-300'
-							style={{ maxHeight: openQuestion === index ? `${answerRefs.current[index]?.scrollHeight}px` : '0px' }}>
-							<p className='text-mainText py-2'>{item.answer}</p>
-						</div>
-					</div>
-				))}
+					))}
+				</div>
+			</section>
+			<div className='relative'>
+				<div className=' h-0 w-7/12 border-b-[50px] border-b-[#aa7de2] border-r-[70px] border-r-[#f8f8f8] absolute top-[-50px]'></div>
 			</div>
-		</section>
-	)
+		</>
+	);
 }
