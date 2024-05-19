@@ -22,6 +22,9 @@ module.exports = {
 
 				firstGreen: '#C0FE70',
 				secondGreen: '#4EFCBD',
+
+				rightFade: '#A37EE7',
+				leftFade: '#ED71AF',
 			},
 		},
 	},
