@@ -46,11 +46,11 @@ export default function Services() {
 					Oferowane usługi
 				</h2>
 
-				<div className='flex flex-col space-y-16 my-20'>
+				<div className='flex flex-col space-y-16 my-20 md:flex-row md:flex-wrap md:content-center md:justify-center'>
 					{services.map((item, index) => (
 						<div
 							key={index}
-							className='[box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] text-center py-10 rounded cursor-pointer relative'
+							className='md:min-w-[30%] [box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] text-center py-10 md:mx-5 rounded cursor-pointer relative'
 						>
 							<div
 								className={`flex justify-center items-center w-14 h-14 rounded-full absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-gradient-to-r ${item.fade}`}
