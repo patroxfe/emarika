@@ -63,7 +63,7 @@ export default function QnA() {
 
 	return (
 		<>
-			<section className='bg-customGray m-auto py-8'>
+			<section className='bg-customGray m-auto pt-8 pb-20'>
 				<h2 className='text-mainText font-bold text-3xl text-center'>Q&A</h2>
 				<div className='my-14 max-w-2xl m-auto'>
 					{questions.map((item, index) => (

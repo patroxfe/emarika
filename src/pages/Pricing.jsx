@@ -63,12 +63,12 @@ export default function Pricing() {
 				<h2 className='text-mainText font-bold text-3xl text-center'>
 					Cennik i oferty
 				</h2>
-				<div className='mt-8'>
+				<div className='mt-8 md:flex gap-10 md:justify-center md:gap=30'>
 					{pricingOptions.map((category) =>
 						category.options.map((option, index) => (
 							<div
 								key={index}
-								className='bg-gray-100 p-4 rounded-lg [box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] mb-6'
+								className='bg-gray-100 p-4 rounded-lg [box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] mb-6 md:min-w-[30%]'
 							>
 								<h4 className='text-xl font-semibold text-mainText'>
 									{option.title}

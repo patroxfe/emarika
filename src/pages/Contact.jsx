@@ -1,7 +1,7 @@
 export default function Contanct() {
 	return (
 		<>
-			<section className='flex flex-col text-center pt-10 tracking-wider'>
+			<section className='flex flex-col text-center pt-10 tracking-wider md:grid md:grid-cols-4 md:grid-rows-2 md:grid-flow-col'>
 				<div>
 					<i>poczta</i>
 					<h5 className='text-xl font-bold py-2'>E-mail</h5>
