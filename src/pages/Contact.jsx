@@ -5,8 +5,8 @@ export default function Contanct() {
 				<div>
 					<h5 className='text-xl font-bold py-2'>E-mail</h5>
 					<p className='tracking-wider'>emarika@gmail.com</p>
-					<p className='tracking-wider'>rafaldruzba@op.pl</p>
 					<p className='tracking-wider'>patryksulich@wp.pl</p>
+					<p className='tracking-wider'>rafaldruzba@op.pl</p>
 				</div>
 				<div className='pt-3'>
 					<h5 className='text-xl font-bold py-2'>Telefon</h5>
@@ -26,8 +26,10 @@ export default function Contanct() {
 				</div>
 				<div className='flex flex-col'>
 					<h5 className='text-xl font-bold py-2'>Prawne</h5>
-					<a>Polityka prywatności</a>
-					<a className='tracking-wider'>Polityka plików cookies</a>
+					<a className='cursor-pointer'>Polityka prywatności</a>
+					<a className='tracking-wider cursor-pointer'>
+						Polityka plików cookies
+					</a>
 				</div>
 				<div>
 					<h5 className='text-xl font-bold py-2'>Lokalne usługi</h5>

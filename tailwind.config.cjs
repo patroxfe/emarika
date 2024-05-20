@@ -8,7 +8,7 @@ module.exports = {
 				mainText: '#0A2540',
 				borderCol: '#8593A2',
 				buttonText: '#B87BD8',
-				secondText: '#8997A6',
+				secondText: '#3a4048',
 				thirdText: '#5F7182',
 
 				firstViolet: '#E36FFB',
@@ -29,4 +29,4 @@ module.exports = {
 		},
 	},
 	plugins: [],
-}
+};
