@@ -141,9 +141,7 @@ export default function Implementation() {
 					</div>
 				</div>
 			</section>
-			<div className='relative'>
-				<div className=' h-0 w-7/12 border-b-[50px] border-b-white border-r-[70px] border-r-[#f8f8f8] absolute top-[-50px]'></div>
-			</div>
+
 		</>
 	)
 }

@@ -58,9 +58,7 @@ export default function Services() {
 					))}
 				</div>
 			</section>
-			<div className='relative'>
-				<div className=' h-0 w-7/12 border-b-[50px] border-b-[#f8f8f8] border-r-[70px] border-r-white absolute top-[-50px]'></div>
-			</div>
+
 		</>
 	)
 }

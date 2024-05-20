@@ -38,31 +38,33 @@ export default function Summary() {
 
 	return (
 		<>
-			<section className='bg-white pt-5 pb-10 lg:flex lg:flex-row-reverse'>
-				<div className='wrapper'>
-					{questions.map((item, index) => (
-						<div key={index}>
-							<div className={`[box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] rounded-xl flex mt-10 p-5 ${item.fade}`}>
-								<div className='flex items-center justify-center bg-gradient-to-r w-14 h-14 mr-3 rounded-full flex-shrink-0'>
-									<img src={item.icon} alt='icon' className='w-9 h-9' />
-								</div>
-								<div className='flex flex-col'>
-									<h2 className='text-mainText font-semibold text-lg'>{item.title}</h2>
-									<p className='text-sm text-secondText'>{item.description}</p>
+			<section className='bg-white pt-5 pb-10 lg:flex lg:flex-row-reverse lg:mb-16'>
+				<div className='wrapper lg:flex lg:gap-x-20 lg:items-center'>
+					<div className='lg:order-2 xl:w-1/2'>
+						{questions.map((item, index) => (
+							<div key={index}>
+								<div className={`[box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] rounded-xl flex mt-10 p-5 ${item.fade}`}>
+									<div className='flex items-center justify-center bg-gradient-to-r w-14 h-14 mr-3 rounded-full flex-shrink-0'>
+										<img src={item.icon} alt='icon' className='w-9 h-9' />
+									</div>
+									<div className='flex flex-col'>
+										<h2 className='text-mainText font-semibold text-lg'>{item.title}</h2>
+										<p className='text-sm text-secondText'>{item.description}</p>
+									</div>
 								</div>
 							</div>
-						</div>
-					))}
+						))}
+					</div>
+					<div className='xl:w-1/2'>
+						<img
+							className='scale-1 md:scale-75 lg:scale-[1] '
+							src={SummaryImg}
+							alt='Obrazek pomagający zilustrować opisane podpunkty, pomaga w wyglądzie strony'
+						/>
+					</div>
 				</div>
-				<img
-					className='scale-1 md:scale-75 lg:scale-50'
-					src={SummaryImg}
-					alt='Obrazek pomagający zilustrować opisane podpunkty, pomaga w wyglądzie strony'
-				/>
 			</section>
-			<div className='relative'>
-				<div className=' h-0 w-7/12 border-b-[50px] border-b-[#f8f8f8] border-r-[70px] border-r-white absolute top-[-50px]'></div>
-			</div>
+
 		</>
 	)
 }
