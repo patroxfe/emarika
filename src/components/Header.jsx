@@ -1,10 +1,16 @@
 import PhoneLaptop from '../assets/doheadera.png'
+import CirclesBG from '../assets/small-circles.svg'
 
 export default function Header() {
 	return (
 		<>
-			<section className=' text-center z-30 lg:flex bg-gradient-to-r from-leftFade to-rightFade '>
-				<div className='wrapper flex items-center lg:gap-x-12'>
+			<section className='text-center lg:flex bg-gradient-to-r from-leftFade to-rightFade relative overflow-hidden'>
+				<img
+					className='absolute inset-0 scale-[150%] z-0 -left-[30%] -top-[30%] '
+					src={CirclesBG}
+					alt='Tło z małymi okręgami'
+				/>
+				<div className='wrapper flex items-center lg:gap-x-12 z-10 relative'>
 					<div className='lg:min-w-[30%] lg:max-w-[50%]'>
 						<h1 className='font-extrabold text-3xl pt-[130px] leading-10 [text-shadow:_5px_5px_10px_rgb(0_0_0_/_25%)] lg:text-start lg:text-5xl'>
 							Tworzymy nowoczesne strony internetowe na zamówienie

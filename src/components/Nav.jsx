@@ -8,7 +8,7 @@ const NavLinks = ({ isOpen }) => {
 				isOpen ? 'block' : 'hidden'
 			} lg:block`}
 		>
-			<ul className='lg:flex lg:space-x-6 lg:space-x-12 space-y-4 lg:space-y-0 text-center lg:justify-center'>
+			<ul className='lg:flex lg:space-x-10 xl:space-x-12 2xl:space-x-14 space-y-4 lg:space-y-0 text-center lg:justify-center'>
 				<li className='cursor-pointer'>O nas</li>
 				<li className='cursor-pointer'>Realizacje</li>
 				<li className='cursor-pointer'>Cennik i oferty</li>
