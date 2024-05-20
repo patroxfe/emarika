@@ -36,7 +36,8 @@ export default function Contanct() {
 				<div className='flex flex-col text-center col-start-1 row-span-2'>
 					<h3 className='text-5xl font-bold pt-10 pb-3'>eMarika.pl</h3>
 					<p className='pb-8'>
-						Jesteśmy na rynku od <span className='text-amber-200 font-semibold'>ponad 20 lat</span>!
+						Jesteśmy na rynku od{' '}
+						<span className='text-amber-200 font-semibold'>ponad 20 lat</span>!
 					</p>
 				</div>
 			</section>
@@ -44,5 +45,5 @@ export default function Contanct() {
 				<p className=''>eMarika.pl | 2024 C</p>
 			</footer>
 		</>
-	)
+	);
 }

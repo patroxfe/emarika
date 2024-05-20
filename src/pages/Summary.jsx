@@ -1,8 +1,8 @@
-import SummaryImg from '../assets/summary-img.png'
-import CrownImg from '../assets/mdi_crown.svg'
-import MobileImg from '../assets/circum_mobile.svg'
-import PriceImg from '../assets/circum_price.svg'
-import TimeImg from '../assets/circum_time.svg'
+import SummaryImg from '../assets/summary-img.png';
+import CrownImg from '../assets/mdi_crown.svg';
+import MobileImg from '../assets/circum_mobile.svg';
+import PriceImg from '../assets/circum_price.svg';
+import TimeImg from '../assets/circum_time.svg';
 
 export default function Summary() {
 	const questions = [
@@ -34,7 +34,7 @@ export default function Summary() {
 			fade: 'from-firstGreen to-secondGreen',
 			icon: CrownImg,
 		},
-	]
+	];
 
 	return (
 		<>
@@ -43,13 +43,19 @@ export default function Summary() {
 					<div className='lg:order-2 xl:w-1/2'>
 						{questions.map((item, index) => (
 							<div key={index}>
-								<div className={`[box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] rounded-xl flex mt-10 p-5 ${item.fade}`}>
+								<div
+									className={`[box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] rounded-xl flex mt-10 p-5 ${item.fade}`}
+								>
 									<div className='flex items-center justify-center bg-gradient-to-r w-14 h-14 mr-3 rounded-full flex-shrink-0'>
 										<img src={item.icon} alt='icon' className='w-9 h-9' />
 									</div>
 									<div className='flex flex-col'>
-										<h2 className='text-mainText font-semibold text-lg'>{item.title}</h2>
-										<p className='text-sm text-secondText'>{item.description}</p>
+										<h2 className='text-mainText font-semibold text-lg'>
+											{item.title}
+										</h2>
+										<p className='text-sm text-secondText'>
+											{item.description}
+										</p>
 									</div>
 								</div>
 							</div>
@@ -57,14 +63,13 @@ export default function Summary() {
 					</div>
 					<div className='xl:w-1/2'>
 						<img
-							className='scale-1 md:scale-75 lg:scale-[1] '
+							className='scale-1 md:scale-[0.80] md:scale-[0.90]'
 							src={SummaryImg}
 							alt='Obrazek pomagający zilustrować opisane podpunkty, pomaga w wyglądzie strony'
 						/>
 					</div>
 				</div>
 			</section>
-
 		</>
-	)
+	);
 }

@@ -1,13 +1,13 @@
-import { useState, useRef, useEffect } from 'react'
-import Arrow from '../assets/arrow.svg'
+import { useState, useRef, useEffect } from 'react';
+import Arrow from '../assets/arrow.svg';
 
 export default function QnA() {
-	const [openQuestion, setOpenQuestion] = useState(null)
-	const answerRefs = useRef([])
+	const [openQuestion, setOpenQuestion] = useState(0);
+	const answerRefs = useRef([]);
 
-	const toggleQuestion = index => {
-		setOpenQuestion(openQuestion === index ? null : index)
-	}
+	const toggleQuestion = (index) => {
+		setOpenQuestion(openQuestion === index ? 0 : index);
+	};
 
 	const questions = [
 		{
@@ -50,27 +50,33 @@ export default function QnA() {
 			answer:
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
 		},
-	]
+	];
 
 	useEffect(() => {
 		answerRefs.current.forEach((ref, index) => {
 			if (ref) {
-				ref.style.maxHeight = openQuestion === index ? `${ref.scrollHeight}px` : '0px'
+				ref.style.maxHeight =
+					openQuestion === index ? `${ref.scrollHeight}px` : '0px';
 			}
-		})
-	}, [openQuestion])
+		});
+	}, [openQuestion]);
 
 	return (
 		<>
 			<section className='bg-customGray m-auto pt-8 pb-20'>
-				<h2 className='text-mainText font-bold text-3xl text-center'>Q&A</h2>
+				<h2 className='text-mainText font-bold text-3xl text-center lg:text-4xl'>
+					Q&A
+				</h2>
 				<div className='my-14 max-w-2xl m-auto'>
 					{questions.map((item, index) => (
 						<div key={index} className='border-b border-stone-300'>
 							<div
 								className='py-3 flex justify-between items-center cursor-pointer'
-								onClick={() => toggleQuestion(index)}>
-								<p className='text-mainText font-semibold text-xl max-w-[75%]'>{item.question}</p>
+								onClick={() => toggleQuestion(index)}
+							>
+								<p className='text-mainText font-semibold text-xl max-w-[75%] lg:text-2xl'>
+									{item.question}
+								</p>
 								<img
 									src={Arrow}
 									alt='Strzałka rozwijająca odpowiedź'
@@ -80,18 +86,23 @@ export default function QnA() {
 								/>
 							</div>
 							<div
-								ref={el => (answerRefs.current[index] = el)}
+								ref={(el) => (answerRefs.current[index] = el)}
 								className='overflow-hidden transition-all duration-300'
 								style={{
-									maxHeight: openQuestion === index ? `${answerRefs.current[index]?.scrollHeight}px` : '0px',
-								}}>
-								<p className='text-mainText py-2'>{item.answer}</p>
+									maxHeight:
+										openQuestion === index
+											? `${answerRefs.current[index]?.scrollHeight}px`
+											: '0px',
+								}}
+							>
+								<p className='text-mainText py-2 lg:text-xl pb-4'>
+									{item.answer}
+								</p>
 							</div>
 						</div>
 					))}
 				</div>
 			</section>
-
 		</>
-	)
+	);
 }

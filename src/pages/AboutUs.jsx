@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import Arrow from '../assets/arrow.svg';
 
 export default function AboutUs() {
-	const [openQuestion, setOpenQuestion] = useState(null);
+	const [openQuestion, setOpenQuestion] = useState(0);
 	const answerRefs = useRef([]);
 
 	const toggleQuestion = (index) => {
@@ -44,7 +44,9 @@ export default function AboutUs() {
 	return (
 		<>
 			<section className='bg-customGray m-auto py-8'>
-				<h2 className='text-mainText font-bold text-3xl text-center'>O nas</h2>
+				<h2 className='text-mainText font-bold text-3xl text-center lg:text-4xl'>
+					O nas
+				</h2>
 				<div className='my-14 max-w-2xl m-auto'>
 					{questions.map((item, index) => (
 						<div key={index} className='border-b border-stone-300'>
@@ -52,7 +54,7 @@ export default function AboutUs() {
 								className='py-3 flex justify-between items-center cursor-pointer'
 								onClick={() => toggleQuestion(index)}
 							>
-								<p className='text-mainText font-semibold text-xl max-w-[75%]'>
+								<p className='text-mainText font-semibold text-xl max-w-[75%] lg:text-2xl'>
 									{item.question}
 								</p>
 								<img
@@ -73,7 +75,9 @@ export default function AboutUs() {
 											: '0px',
 								}}
 							>
-								<p className='text-mainText py-2'>{item.answer}</p>
+								<p className='text-mainText py-2 lg:text-xl pb-4'>
+									{item.answer}
+								</p>
 							</div>
 						</div>
 					))}
