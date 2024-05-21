@@ -4,15 +4,23 @@ export default function Pricing() {
 			category: 'onePage',
 			options: [
 				{
-					title: 'Strona wizytówka',
+					title: 'Strona Wizytówka',
 					heading: 'Idealna na początek oraz do podstawowej prezentacji oferty firmy w internecie.',
-					description: 'Cała treść na stronie głównej (5 sekcji)',
+					description: 'Cała treść na stronie głównej',
 					leadTime: '3-6 dni',
-					price: '1100 PLN',
+					price: '1300',
 					subpoints: [
-						'Responsywna na wszystkie urządzenia',
-						'Optymalizacja pod kątem SEO',
-						'Integracja z mediami społecznościowymi',
+						'Koncepcja budowy strony',
+						'Szkic strony głównej',
+						'Indywidualny projekt graficzny',
+						'Dostosowanie do urządzeń mobilnych (RWD)',
+						'Zakładki (tylko strona główna)',
+						'Pisanie treści na stronę',
+						'Testy na różnych urządzeniach',
+						'Hosting i domena',
+						'Publikacja strony',
+						'Wlasność bez abonamentów',
+						'Gwarancja na 12 miesięcy',
 					],
 				},
 			],
@@ -21,12 +29,25 @@ export default function Pricing() {
 			category: 'multiPage',
 			options: [
 				{
-					title: 'Strona firmowa',
+					title: 'Strona Firmowa',
 					heading: 'Najczęściej wybierany wariant strony internetowej, standardowa prezentacja firmy w internecie.',
 					description: 'Strona główna + do 5 podstron',
 					leadTime: '5-8 dni',
-					price: '1500 PLN',
-					subpoints: ['Indywidualny projekt graficzny', 'Wiele podstron', 'Formularz kontaktowy', 'Galeria zdjęć'],
+					price: '1800',
+					subpoints: [
+						'Koncepcja budowy strony',
+						'Szkic strony głównej i podstron',
+						'Indywidualny projekt graficzny',
+						'Dostosowanie do urządzeń mobilnych (RWD)',
+						'Zakładki (strona główna + do 5 podstron)',
+						'Pisanie treści na stronę',
+						'Testy na różnych urządzeniach',
+						'Hosting i domena',
+						'Publikacja strony',
+						'Wlasność bez abonamentów',
+						'Gwarancja na 12 miesięcy',
+						'Formularz kontaktowy',
+					],
 				},
 			],
 		},
@@ -34,16 +55,27 @@ export default function Pricing() {
 			category: 'blogPage',
 			options: [
 				{
-					title: 'Strona z blogiem',
+					title: 'Strona Premium',
 					heading:
-						'Idealne rozwiązanie do prezentacji oferty firmy i budowania wizerunku oraz widoczności w Google za pomocą bloga.',
+						'Idealne rozwiązanie do prezentacji oferty i budowania wizerunku oraz widoczności w Google Twojej firmy.',
 					description: 'Strona główna + do 5 podstron + blog',
 					leadTime: '7-11 dni',
-					price: '1900 PLN',
+					price: '2200',
 					subpoints: [
-						'System zarządzania treścią (CMS)',
-						'Możliwość dodawania wpisów blogowych',
-						'Integracja z newsletterem',
+						'Koncepcja budowy strony',
+						'Szkic strony głównej, podstron, listy artykułów, pojedyńczego artykułu',
+						'Indywidualny projekt graficzny',
+						'Dostosowanie do urządzeń mobilnych (RWD)',
+						'Zakładki (strona główna + do 5 podstron + blog)',
+						'Pisanie treści na stronę',
+						'Testy na różnych urządzeniach',
+						'Hosting i domena',
+						'Publikacja strony',
+						'Wlasność bez abonamentów',
+						'Gwarancja na 12 miesięcy',
+						'Formularz kontaktowy',
+						'Blog (aktualności)',
+						'Wizytówka i logo (opcjonalnie)',
 					],
 				},
 			],
@@ -54,27 +86,41 @@ export default function Pricing() {
 		<>
 			<section className='bg-white m-auto py-8 pb-20'>
 				<h2 className='text-mainText font-bold text-3xl text-center lg:text-4xl'>Cennik i oferty</h2>
-				<div className='mt-8 flex flex-col lg:flex-row gap-10 lg:justify-center md:gap-30 wrapper items-center lg:items-stretch px-6 sm:px-10 md:px-14 2xl:px-0'>
-					{pricingOptions.map(category =>
-						category.options.map((option, index) => (
-							<div
-								key={index}
-								className='bg-gray-100 p-4 rounded-lg [box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] mb-6 md:min-w-[30%] max-w-sm'>
-								<h4 className='text-xl font-semibold text-mainText'>{option.title}</h4>
-								<p className='text-md text-secondText mt-2'>{option.heading}</p>
-								<p className='text-md text-thirdText mt-2'>{option.description}</p>
-								<p className='text-md text-thirdText mt-2'>Czas realizacji: {option.leadTime}</p>
-								<ul className='list-disc list-inside mt-2'>
-									{option.subpoints.map((subpoint, subIndex) => (
-										<li key={subIndex} className='text-md text-thirdText'>
-											{subpoint}
-										</li>
-									))}
-								</ul>
-								<p className='text-md text-thirdText mt-2'>Cena: {option.price}</p>
-							</div>
-						))
-					)}
+				<div className="flex flex-col items-center">
+					<div className='mt-8 flex flex-col lg:flex-row gap-10 lg:justify-center md:gap-30 wrapper items-center lg:items-start px-6 sm:px-10 md:px-14 2xl:px-0 2xl:justify-start'>
+						{pricingOptions.map(category =>
+							category.options.map((option, index) => (
+								<div
+									key={index}
+									className='bg-white p-8 rounded-lg [box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] mb-6 md:min-w-[30%] max-w-sm cursor-pointer'>
+									<div className='text-center'>
+										<h4 className='text-2xl font-semibold text-mainText'>{option.title}</h4>
+										<p className='text-md text-secondText mt-2'>{option.heading}</p>
+									</div>
+									<div className='border-y-[1px] border-stone-300 py-2 my-4'>
+										<p className='text-md text-secondText font-semibold'>{option.description}</p>
+										<p className='text-md text-secondText'>
+											Czas realizacji: ok. <span className='font-semibold'>{option.leadTime}</span>
+										</p>
+									</div>
+									<ul className='list-disc list-inside mt-2'>
+										{option.subpoints.map((subpoint, subIndex) => (
+											<li key={subIndex} className='text-md text-thirdText'>
+												{subpoint}
+											</li>
+										))}
+									</ul>
+									<div className='text-center mt-10'>
+										<p className='text-lg text-mainText mt-2 font-medium'>
+											Od <span className='text-4xl font-bold'>{option.price}zł</span>
+										</p>
+										<p className='text-lg text-mainText font-medium'>+ VAT 23%</p>
+									</div>
+								</div>
+							))
+						)}
+					</div>
+					<button className='text-white text-center text-2xl bg-gradient-to-r from-firstBlue to-secondBlue font-semibold rounded px-6 py-3 mt-10'>Uzyskaj wycenę</button>
 				</div>
 			</section>
 		</>

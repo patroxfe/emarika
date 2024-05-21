@@ -25,42 +25,42 @@ export default function Implementation() {
 			title: 'Zapoznanie',
 			description:
 				'Analizujemy branżę klienta, przeglądając konkurencję i trendy, co pozwala nam lepiej zrozumieć kontekst projektu.',
-			fade: 'from-firstViolet to-secondViolet',
+			fade: 'from-firstBlue to-secondBlue',
 			img: CircumTime,
 		},
 		{
 			title: 'Planowanie',
 			description:
 				'Tworzymy spersonalizowany plan projektu, uwzględniając cele, harmonogram prac oraz budżet, aby zapewnić efektywną realizację projektu.',
-			fade: 'from-firstViolet to-secondViolet',
+			fade: 'from-firstRed to-secondRed',
 			img: CircumTime,
 		},
 		{
 			title: 'Projektowanie',
 			description:
 				'Projektujemy stronę internetową zgodnie z identyfikacją wizualną klienta, dbając o estetykę i użyteczność.',
-			fade: 'from-firstViolet to-secondViolet',
+			fade: 'from-firstBlue to-secondBlue',
 			img: CircumTime,
 		},
 		{
 			title: 'Programowanie',
 			description:
 				'Implementujemy kod, wykorzystując najnowsze technologie i najlepsze praktyki programistyczne, aby zapewnić płynne działanie strony.',
-			fade: 'from-firstViolet to-secondViolet',
+			fade: 'from-firstGreen to-secondGreen',
 			img: CircumTime,
 		},
 		{
 			title: 'Testowanie',
 			description:
 				'Przeprowadzamy szczegółowe testy funkcjonalne i jakościowe, weryfikując responsywność, szybkość ładowania oraz funkcjonalność strony na różnych platformach.',
-			fade: 'from-firstViolet to-secondViolet',
+			fade: 'from-firstRed to-secondRed',
 			img: CircumTime,
 		},
 		{
 			title: 'Ostatnie poprawki',
 			description:
 				'Na podstawie wyników testów dokonujemy ostatnich poprawek i optymalizacji, usuwając ewentualne błędy i dostosowując stronę do ostatecznych wymagań klienta.',
-			fade: 'from-firstViolet to-secondViolet',
+			fade: 'from-firstBlue to-secondBlue',
 			img: CircumTime,
 		},
 		{
@@ -74,7 +74,7 @@ export default function Implementation() {
 			title: 'Twoja gotowa strona',
 			description:
 				'Po długim procesie Twój projekt stał się rzeczywistością. Teraz możesz cieszyć się profesjonalną i funkcjonalną stroną internetową, która w pełni odzwierciedla Twoje cele i potrzeby. Dzięki naszej współpracy, Twoja firma ma solidne fundamenty online, gotowe na podbicie sieci.',
-			fade: 'from-firstViolet to-secondViolet',
+			fade: 'from-firstGreen to-secondGreen',
 			img: CircumTime,
 		},
 	]
@@ -137,7 +137,8 @@ export default function Implementation() {
 								Krok: <span className='font-semibold'>{currentIndex + 1}</span>
 								/9
 							</p>
-							<div className='rounded-full w-20 h-20 bg-cyan-300 flex items-center justify-center'>
+							<div
+								className={`rounded-full w-20 h-20 bg-gradient-to-r ${implementationProcess[currentIndex].fade} flex items-center justify-center`}>
 								<img src={implementationProcess[currentIndex].img} alt='icon' className='w-12 h-12' />
 							</div>
 							<h3 className='text-xl font-bold text-mainText my-3'>{implementationProcess[currentIndex].title}</h3>
@@ -155,7 +156,7 @@ export default function Implementation() {
 				<h2 className='text-mainText pb-10 font-bold text-3xl text-center xl:text-4xl'>Proces realizacji</h2>
 
 				<div className='wrapper px-16 2xl:px-0'>
-					<div className='grid grid-cols-4 grid-rows-4 gap-5  m-auto'>
+					<div className='grid grid-cols-4 grid-rows-4 gap-10  m-auto'>
 						<div className='my-12 col-span-2'>
 							<p className='text-xl text-mainText font-semibold'>Zobacz co Cię czeka!</p>
 							<div className='my-2 space-y-3'>
@@ -167,11 +168,13 @@ export default function Implementation() {
 								))}
 							</div>
 						</div>
-						<div className='row-start-2 col-span-3 bg-black'></div>
+						<div className='relative overflow-hidden row-start-2 col-span-3 rounded-2xl bg-[#1b2841ff]'>
+							<div className='implementation-img'></div>
+						</div>
 						{implementationProcess.map((step, index) => (
 							<div
 								key={index}
-								className={`relative p-6 bg-white shadow-md rounded-2xl mb-6 w-full auto-rows-auto ${
+								className={`relative p-6 bg-white shadow-md rounded-2xl  w-full auto-rows-auto ${
 									(index === 3 && 'col-start-4 row-start-3') ||
 									(index === 4 && 'col-start-3 row-start-3') ||
 									(index === 5 && 'col-start-2 row-start-3') ||
@@ -181,7 +184,8 @@ export default function Implementation() {
 								<p className='absolute right-6 top-4 text-thirdText font-medium text-lg'>
 									Krok: <span className='font-semibold'>{index + 1}</span>/9
 								</p>
-								<div className='rounded-full w-20 h-20 bg-cyan-300 flex items-center justify-center'>
+								<div
+									className={`rounded-full w-20 h-20 bg-gradient-to-r ${step.fade} flex items-center justify-center`}>
 									<img src={step.img} alt='icon' className='w-12 h-12' />
 								</div>
 								<h3 className='text-xl font-bold text-mainText my-3'>{step.title}</h3>

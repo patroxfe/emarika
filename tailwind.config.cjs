@@ -11,6 +11,7 @@ module.exports = {
 				secondText: '#3a4048',
 				thirdText: '#5F7182',
 				blueMain: '#0697d6',
+				pink: '#E182BD',
 
 				firstViolet: '#E36FFB',
 				secondViolet: '#B351FC',
@@ -30,4 +31,4 @@ module.exports = {
 		},
 	},
 	plugins: [],
-};
+}
