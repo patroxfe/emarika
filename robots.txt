@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /cgo-bin/
+Disallow: /images/ 
+Disallow: /pages/

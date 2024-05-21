@@ -6,7 +6,7 @@ export default function QnA() {
 	const answerRefs = useRef([])
 
 	const toggleQuestion = index => {
-		setOpenQuestion(openQuestion === index ? 0 : index)
+		setOpenQuestion(openQuestion === index ? '' : index)
 	}
 
 	const questions = [
