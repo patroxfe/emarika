@@ -67,7 +67,7 @@ export default function QnA() {
 				<h2 className='text-mainText font-bold text-3xl text-center lg:text-4xl'>
 					Q&A
 				</h2>
-				<div className='my-14 max-w-2xl m-auto'>
+				<div className='my-14 max-w-2xl m-auto px-6 sm:px-10'>
 					{questions.map((item, index) => (
 						<div key={index} className='border-b border-stone-300'>
 							<div

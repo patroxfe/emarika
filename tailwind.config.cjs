@@ -10,6 +10,7 @@ module.exports = {
 				buttonText: '#B87BD8',
 				secondText: '#3a4048',
 				thirdText: '#5F7182',
+				blueMain: '#0697d6',
 
 				firstViolet: '#E36FFB',
 				secondViolet: '#B351FC',

@@ -43,7 +43,7 @@ export default function AboutUs() {
 
 	return (
 		<>
-			<section className='bg-customGray m-auto py-8'>
+			<section className='bg-customGray m-auto py-8 px-6 sm:px-10'>
 				<h2 className='text-mainText font-bold text-3xl text-center lg:text-4xl'>
 					O nas
 				</h2>
