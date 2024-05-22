@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import HamburgerMenu from '../assets/mdi_hamburger-menu.svg'
 import { Squeeze as Hamburger } from 'hamburger-react'
 
 const NavLinks = ({ isOpen, setIsOpen }) => {
@@ -32,7 +31,6 @@ export default function Nav() {
 	const [scrollPosition, setScrollPosition] = useState(0)
 	const [isOpenBurger, setOpenBurger] = useState(false)
 	const toggleNavbar = () => {
-		;``
 		setIsOpen(!isOpen)
 	}
 	const handleScroll = () => {

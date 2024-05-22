@@ -8,19 +8,55 @@ import Implementation from './pages/Implementation'
 import Pricing from './pages/Pricing'
 import QnA from './pages/QnA'
 import Contact from './pages/Contact'
+import Brief from './pages/Brief'
+import Terms from './pages/Terms'
+
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom'
 
 function App() {
 	return (
 		<>
-			<Nav />
-			<Header />
-			<Summary />
-			<AboutUs />
-			<Services />
-			<Implementation />
-			<Pricing />
-			<QnA />
-			<Contact />
+			<BrowserRouter>
+				<Routes>
+					<Route
+						path='/emarika/'
+						element={
+							<div>
+								<Nav />
+								<Header />
+								<Summary />
+								<AboutUs />
+								<Services />
+								<Implementation />
+								<Pricing />
+								<QnA />
+								<Contact />
+							</div>
+						}
+					/>
+
+					<Route
+						path='/emarika/brief'
+						element={
+							<>
+								<Nav />
+								<Brief />
+								<Contact />
+							</>
+						}
+					/>
+					<Route
+						path='/emarika/regulamin'
+						element={
+							<>
+								<Nav />
+								<Terms />
+								<Contact />
+							</>
+						}
+					/>
+				</Routes>
+			</BrowserRouter>
 		</>
 	)
 }

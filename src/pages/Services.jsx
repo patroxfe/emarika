@@ -44,7 +44,7 @@ export default function Services() {
 			<section className='bg-white m-auto py-8'>
 				<h2 className='text-mainText font-bold text-3xl text-center lg:text-4xl'>Oferowane usługi</h2>
 
-				<div className='wrapper md:flex-row md:flex-wrap md:justify-center md:items-center flex flex-col gap-y-16 md:gap-y-16 my-20 px-10  md:w-auto xl:px-0'>
+				<div className='wrapper md:flex-row md:flex-wrap md:justify-center md:items-center flex flex-col gap-y-16 md:gap-y-16 my-20 px-10  md:w-auto xl:px-0 '>
 					{services.map((item, index) => (
 						<div
 							key={index}
