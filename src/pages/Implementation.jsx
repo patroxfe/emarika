@@ -2,7 +2,6 @@ import { useState } from 'react'
 import Check from '../assets/checkmark.svg'
 import ArrowPrevious from '../assets/arrowprevious.svg'
 import ArrowNext from '../assets/arrownext.svg'
-import CircumTime from '../assets/circum_time.svg'
 import PlanningImg from '../assets/planning-img.svg'
 import CodingImg from '../assets/coding-img.svg'
 import DesigningImg from '../assets/designing-img.svg'
@@ -12,6 +11,7 @@ import StartImg from '../assets/start-img.svg'
 import IntroductionImg from '../assets/introduction-img.svg'
 import ImplementingImg from '../assets/implementing-img.svg'
 import WebsiteImg from '../assets/website-img.svg'
+
 
 export default function Implementation() {
 	const info = [

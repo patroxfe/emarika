@@ -82,3 +82,39 @@ label {
 	color: #000000;
 	font-weight: 400;
 }
+
+input:focus,
+textarea:focus {
+	outline: none;
+}
+
+input[type='radio'] {
+	appearance: none; /* Usunięcie domyślnego wyglądu radio button */
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	outline: none; /* Usunięcie konturu po kliknięciu */
+	border-radius: 50%; /* Zaokrąglenie, aby uzyskać kształt koła */
+	width: 20px; /* Ustawienie szerokości i wysokości */
+	height: 20px;
+	border: 2px solid #0697d6; /* Ustawienie koloru granicy */
+	background-color: transparent; /* Transparentne tło */
+}
+
+/* Stylowanie kropki wewnątrz radio button po zaznaczeniu */
+input[type='radio']:checked::before {
+	content: ''; /* Dodanie kropki jako pseudo-elementu */
+	display: block;
+	width: 8px;
+	height: 8px;
+	background-color: #0697d6; /* Kolor kropki */
+	border-radius: 50%; /* Zaokrąglenie, aby uzyskać kształt koła */
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+textarea {
+	resize: vertical;
+	max-height: 300px;
+}
