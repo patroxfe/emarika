@@ -42,7 +42,7 @@ export default function AboutUs() {
 
 	return (
 		<>
-			<section className='bg-customGray m-auto py-8 px-6 sm:px-10'>
+			<section className='bg-customGray m-auto py-8 px-6 sm:px-10' id='o-nas'>
 				<h2 className='text-mainText font-bold text-3xl text-center lg:text-4xl'>O nas</h2>
 				<div className='my-14 max-w-2xl m-auto'>
 					{questions.map((item, index) => (

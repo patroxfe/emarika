@@ -10,7 +10,7 @@ export default function Contanct() {
 
 	return (
 		<>
-			<section className='pt-10 pb-10 bg-[#111111]'>
+			<section className='pt-10 pb-10 bg-[#111111]' id='kontakt'>
 				<div className='gap-5 wrapper flex flex-col text-center lg:text-left tracking-wider md:grid md:grid-cols-2 md:grid-rows-2 lg:grid-cols-4 lg:grid-rows-2 text-[#dbdbdb]'>
 					<div className='px-10 font-light '>
 						<h5 className='text-xl font-semibold'>E-mail</h5>

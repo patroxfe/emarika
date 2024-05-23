@@ -86,7 +86,7 @@ export default function Pricing() {
 
 	return (
 		<>
-			<section className='bg-white m-auto py-8 pb-20'>
+			<section className='bg-white m-auto py-8 pb-20' id='cennik-i-oferty'>
 				<h2 className='text-mainText font-bold text-3xl text-center lg:text-4xl'>Cennik i oferty</h2>
 				<div className='flex flex-col items-center'>
 					<div className='mt-8 flex flex-col lg:flex-row gap-10 lg:justify-center md:gap-30 wrapper items-center lg:items-start px-6 sm:px-10 md:px-14 2xl:px-0 2xl:justify-start'>

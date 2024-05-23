@@ -95,7 +95,7 @@ export default function Implementation() {
 
 	return (
 		<>
-			<section className='bg-customGray m-auto py-8 pb-20 block xl:hidden'>
+			<section className='bg-customGray m-auto py-8 pb-20 block xl:hidden' id='realizacja'>
 				<h2 className='text-mainText font-bold text-3xl text-center '>Proces realizacji</h2>
 
 				<div className='wrapper px-6 sm:px-10 max-w-2xl flex flex-col md:flex-row md:px-14 '>
@@ -152,7 +152,7 @@ export default function Implementation() {
 			{/* ===================================================== DESKTOP */}
 			{/* ===================================================== DESKTOP */}
 			{/* ===================================================== DESKTOP */}
-			<section className='bg-customGray m-auto py-8 pb-20 hidden xl:block'>
+			<section className='bg-customGray m-auto py-8 pb-20 hidden xl:block' id='realizacja2'>
 				<h2 className='text-mainText pb-10 font-bold text-3xl text-center xl:text-4xl'>Proces realizacji</h2>
 
 				<div className='wrapper px-16 2xl:px-0'>
