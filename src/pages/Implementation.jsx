@@ -3,6 +3,15 @@ import Check from '../assets/checkmark.svg'
 import ArrowPrevious from '../assets/arrowprevious.svg'
 import ArrowNext from '../assets/arrownext.svg'
 import CircumTime from '../assets/circum_time.svg'
+import PlanningImg from '../assets/planning-img.svg'
+import CodingImg from '../assets/coding-img.svg'
+import DesigningImg from '../assets/designing-img.svg'
+import TestingImg from '../assets/testing-img.svg'
+import FixingImg from '../assets/fixing-img.svg'
+import StartImg from '../assets/start-img.svg'
+import IntroductionImg from '../assets/introduction-img.svg'
+import ImplementingImg from '../assets/implementing-img.svg'
+import WebsiteImg from '../assets/website-img.svg'
 
 export default function Implementation() {
 	const info = [
@@ -19,63 +28,63 @@ export default function Implementation() {
 			title: 'Tutaj zaczynamy',
 			description: 'Rozpoczynamy od szczegółowej rozmowy z klientem, aby dokładnie poznać jego potrzeby i oczekiwania.',
 			fade: 'from-firstViolet to-secondViolet',
-			img: CircumTime,
+			img: StartImg,
 		},
 		{
 			title: 'Zapoznanie',
 			description:
 				'Analizujemy branżę klienta, przeglądając konkurencję i trendy, co pozwala nam lepiej zrozumieć kontekst projektu.',
 			fade: 'from-firstBlue to-secondBlue',
-			img: CircumTime,
+			img: IntroductionImg,
 		},
 		{
 			title: 'Planowanie',
 			description:
 				'Tworzymy spersonalizowany plan projektu, uwzględniając cele, harmonogram prac oraz budżet, aby zapewnić efektywną realizację projektu.',
 			fade: 'from-firstRed to-secondRed',
-			img: CircumTime,
+			img: PlanningImg,
 		},
 		{
 			title: 'Projektowanie',
 			description:
 				'Projektujemy stronę internetową zgodnie z identyfikacją wizualną klienta, dbając o estetykę i użyteczność.',
 			fade: 'from-firstBlue to-secondBlue',
-			img: CircumTime,
+			img: DesigningImg,
 		},
 		{
 			title: 'Programowanie',
 			description:
 				'Implementujemy kod, wykorzystując najnowsze technologie i najlepsze praktyki programistyczne, aby zapewnić płynne działanie strony.',
 			fade: 'from-firstGreen to-secondGreen',
-			img: CircumTime,
+			img: CodingImg,
 		},
 		{
 			title: 'Testowanie',
 			description:
 				'Przeprowadzamy szczegółowe testy funkcjonalne i jakościowe, weryfikując responsywność, szybkość ładowania oraz funkcjonalność strony na różnych platformach.',
 			fade: 'from-firstRed to-secondRed',
-			img: CircumTime,
+			img: TestingImg,
 		},
 		{
 			title: 'Ostatnie poprawki',
 			description:
 				'Na podstawie wyników testów dokonujemy ostatnich poprawek i optymalizacji, usuwając ewentualne błędy i dostosowując stronę do ostatecznych wymagań klienta.',
 			fade: 'from-firstBlue to-secondBlue',
-			img: CircumTime,
+			img: FixingImg,
 		},
 		{
 			title: 'Wdrażanie',
 			description:
 				'Po zakończeniu testów i akceptacji przez klienta wdrażamy stronę na serwerze docelowym, zapewniając jej pełną dostępność dla użytkowników.',
 			fade: 'from-firstViolet to-secondViolet',
-			img: CircumTime,
+			img: ImplementingImg,
 		},
 		{
 			title: 'Twoja gotowa strona',
 			description:
 				'Po długim procesie Twój projekt stał się rzeczywistością. Teraz możesz cieszyć się profesjonalną i funkcjonalną stroną internetową, która w pełni odzwierciedla Twoje cele i potrzeby. Dzięki naszej współpracy, Twoja firma ma solidne fundamenty online, gotowe na podbicie sieci.',
 			fade: 'from-firstGreen to-secondGreen',
-			img: CircumTime,
+			img: WebsiteImg,
 		},
 	]
 
