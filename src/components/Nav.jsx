@@ -44,6 +44,7 @@ export default function Nav() {
 
 	const toggleNavbar = () => {
 		setIsOpen(!isOpen)
+		setOpenBurger(!isOpen) // Aktualizujemy również stan isOpenBurger
 	}
 
 	const handleScroll = () => {
@@ -86,6 +87,7 @@ export default function Nav() {
 				behavior: 'smooth',
 			})
 			setIsOpen(false)
+			setOpenBurger(false) // Zamykamy hamburger menu po kliknięciu w link
 		}
 	}
 

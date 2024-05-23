@@ -41,12 +41,19 @@ nav {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-image: url('./assets/heroimg.jpg');
-	background-position: 20% 50%;
 	overflow: hidden;
 	background-size: cover;
 	background-repeat: no-repeat;
 	opacity: 0.15;
+}
+
+.hero-img-desktop {
+	background-image: url('./assets/heroimg-desktop.webp');
+	background-position: 20% 50%;
+}
+.hero-img-mobile {
+	background-image: url('./assets/heroimg-mobile.webp');
+	background-position: 40% 50%;
 }
 
 .implementation-img {
@@ -55,7 +62,7 @@ nav {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-image: url('./assets/implementation-img.jpg');
+	background-image: url('./assets/implementation-img.webp');
 	background-position: 20% 50%;
 	overflow: hidden;
 	background-size: cover;

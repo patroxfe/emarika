@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import Arrow from '../assets/arrow.svg'
 
 export default function AboutUs() {
-	const [openQuestion, setOpenQuestion] = useState(0)
+	const [openQuestion, setOpenQuestion] = useState('')
 	const answerRefs = useRef([])
 
 	const toggleQuestion = index => {
@@ -13,22 +13,22 @@ export default function AboutUs() {
 		{
 			question: 'Kim jesteśmy?',
 			answer:
-				'Jesteśmy młodym, pełnym pasji zespołem, który ciągle się rozwija w obszarze technologii internetowych. Naszą osobowość definiuje energia, kreatywność i zaangażowanie w każdy projekt. Pracujemy nad budowaniem solidnej reputacji poprzez wysoką jakość naszych produktów i zaangażowaną postawę. Nasza misja to nie tylko tworzenie innowacyjnych stron internetowych, ale także budowanie trwałych relacji opartych na zaufaniu i profesjonalizmie.',
+				'Jesteśmy młodym, pełnym pasji zespołem, który ciągle się rozwija w obszarze technologii internetowych. Jesteśmy kreatywni i zaangażowani w każdy projekt. Pracujemy nad budowaniem solidnej reputacji poprzez wysoką jakość naszych produktów. Naszym celem jest nie tylko tworzenie innowacyjnych stron internetowych, ale także budowanie trwałych relacji opartych na zaufaniu i profesjonalizmie.',
 		},
 		{
 			question: 'Nasze podejście do pracy i klienta',
 			answer:
-				'Jako deweloperzy stron internetowych rozumiemy, że każdy klient ma unikalne cele, potrzeby i wizje dotyczące swojej witryny. Dlatego też stawiamy sobie za cel nie tylko zrozumienie tych potrzeb, ale także dostosowanie naszych usług i rozwiązań do indywidualnych wymagań każdego klienta. Nasz zespół jest gotowy do słuchania, doradzania i współpracy na każdym etapie projektu, aby zapewnić optymalne rezultaty, które spełniają oczekiwania naszych klientów. Dzięki temu podejściu możemy zagwarantować, że każda strona internetowa, którą tworzymy, jest nie tylko funkcjonalna i atrakcyjna wizualnie, ale również idealnie dopasowana do potrzeb i celów naszych klientów.',
+				'Jako deweloperzy stron internetowych rozumiemy, że każdy klient ma unikalne cele i potrzeby dotyczące swojej witryny. Dlatego też stawiamy za cel nie tylko zrozumienie tych potrzeb, ale także dostosowanie naszych usług i rozwiązań do indywidualnych wymagań każdego klienta. Nasz zespół jest gotowy do słuchania, doradzania i współpracy na każdym etapie projektu, aby zapewnić optymalne rezultaty. Dzięki temu podejściu możemy zagwarantować, że każda strona internetowa, którą tworzymy, jest nie tylko funkcjonalna i atrakcyjna wizualnie, ale również idealnie dopasowana do potrzeb i celów naszych klientów.',
 		},
 		{
 			question: 'Dlaczego jesteśmy warci zaufania?',
 			answer:
-				'Jesteśmy zespołem pasjonatów deweloperskich, którzy nie tylko tworzą strony internetowe, ale też budują zaufanie. Nasza praca opiera się na solidnych fundamentach kodu i kreatywnym podejściu do projektowania. Każdy z naszych klientów może polegać na naszym doświadczeniu i zaangażowaniu w każdym etapie procesu tworzenia strony. Wiemy, że zaufanie jest kluczowe, dlatego stawiamy na transparentność, komunikację i rzetelność w każdym projekcie. Jesteśmy gotowi udowodnić naszą wiarygodność poprzez nasze działania i rezultaty.',
+				'Jesteśmy pasjonatami, którzy nie tylko tworzą strony internetowe, ale też budują zaufanie. Nasza praca opiera się na solidnych fundamentach kodu i kreatywnym podejściu do projektowania. Każdy z naszych klientów może polegać na naszym doświadczeniu i zaangażowaniu w każdym etapie procesu tworzenia strony. Wiemy, że zaufanie jest kluczowe, dlatego stawiamy na transparentność, komunikację i rzetelność w każdym projekcie. Jesteśmy gotowi udowodnić naszą wiarygodność poprzez nasze działania i rezultaty.',
 		},
 		{
 			question: 'Doświadczenie i możliwości',
 			answer:
-				'Nasz zespół posiada bogate doświadczenie w branży deweloperskiej stron internetowych, które wynika z wielu lat pracy nad różnorodnymi projektami. Dzięki temu możemy zaoferować szeroki zakres możliwości, od prostych stron wizytówek po zaawansowane platformy e-commerce i aplikacje internetowe. Nasze umiejętności obejmują projektowanie responsywnych i funkcjonalnych interfejsów użytkownika, optymalizację pod kątem SEO oraz integrację z różnymi systemami zewnętrznymi. Niezależnie od wielkości projektu, jesteśmy gotowi sprostać Twoim oczekiwaniom i stworzyć profesjonalną stronę internetową, która wyróżni się na tle konkurencji.',
+				'Posiadamy bogate doświadczenie w branży stron internetowych, które wynika z wielu lat pracy nad różnorodnymi projektami. Dzięki temu możemy zaoferować szeroki zakres możliwości, od prostych stron wizytówek po zaawansowane platformy e-commerce i aplikacje internetowe. Nasze umiejętności obejmują projektowanie responsywnych i funkcjonalnych interfejsów użytkownika oraz optymalizację pod kątem SEO. Niezależnie od wielkości projektu, jesteśmy gotowi sprostać Twoim oczekiwaniom i stworzyć profesjonalną stronę internetową, która wyróżni się na tle konkurencji.',
 		},
 	]
 

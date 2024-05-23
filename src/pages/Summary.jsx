@@ -17,7 +17,7 @@ export default function Summary() {
 			title: 'Niskie ceny',
 			description:
 				'Staramy się połączyć jakość z kosztem wykonania. Jesteśmy jedną z najlepszych opcji na polskim rynku! Nasze ceny są nieporównywalnie niższe niż u konkurencji.',
-			fade: 'from-firstBlue to-secondBlue',
+			fade: 'from-firstGreen to-secondGreen',
 			icon: PriceImg,
 		},
 		{
@@ -31,7 +31,7 @@ export default function Summary() {
 			title: 'Gwarancja',
 			description:
 				'Gwarantujemy bezproblemowość i możliwości ewentualnych bezpłatnych zmian w razie różnorodnych problemów. Nie musisz się martwić o przyszłość, załatwimy to!',
-			fade: 'from-firstGreen to-secondGreen',
+			fade: 'from-firstBlue to-secondBlue',
 			icon: CrownImg,
 		},
 	]
@@ -39,17 +39,17 @@ export default function Summary() {
 	return (
 		<>
 			<section className='bg-white py-10 lg:flex lg:flex-row-reverse lg:items-center lg:justify-center lg:py-16'>
-				<div className='wrapper flex flex-col items-center lg:gap-x-24 justify-center px-6 sm:px-10 md:px-14 max-w-2xl lg:flex-row'>
-					<div className='lg:order-2 lg:w-1/2 md:max-w-2xl'>
+				<div className='wrapper flex flex-col items-center lg:gap-x-24 justify-center px-6 sm:px-10 md:px-14 2xl:px-0 max-w-2xl lg:flex-row '>
+					<div className='lg:order-2 lg:w-1/2 md:max-w-2xl space-y-8'>
 						{questions.map((item, index) => (
-							<div key={index} className={`my-5`}>
+							<div key={index}>
 								<div className={`[box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] rounded-xl flex p-5 ${item.fade}`}>
 									<div className='flex items-center justify-center bg-gradient-to-r w-14 h-14 mr-3 rounded-full flex-shrink-0'>
 										<img src={item.icon} alt='icon' className='w-9 h-9' />
 									</div>
 									<div className='flex flex-col'>
-										<h2 className='text-mainText font-semibold text-lg'>{item.title}</h2>
-										<p className='text-sm text-secondText'>{item.description}</p>
+										<h2 className='text-mainText font-semibold text-lg lg:text-xl'>{item.title}</h2>
+										<p className='text-sm text-secondText lg:text-base lg:pt-[2px]'>{item.description}</p>
 									</div>
 								</div>
 							</div>
@@ -57,7 +57,7 @@ export default function Summary() {
 					</div>
 					<div className='lg:w-1/2'>
 						<img
-							className='w-full md:max-w-2xl'
+							className='w-full lg:max-w-2xl my-6 lg:my-0'
 							src={SummaryImg}
 							alt='Obrazek pomagający zilustrować opisane podpunkty, pomaga w wyglądzie strony'
 						/>

@@ -22,8 +22,8 @@ module.exports = {
 				firstRed: '#FE70AA',
 				secondRed: '#FC4E67',
 
-				firstGreen: '#C0FE70',
-				secondGreen: '#4EFCBD',
+				firstGreen: '#11998E',
+				secondGreen: '#38EF7D',
 
 				rightFade: '#A37EE7',
 				leftFade: '#ED71AF',

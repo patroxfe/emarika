@@ -158,12 +158,12 @@ export default function Implementation() {
 				<div className='wrapper px-16 2xl:px-0'>
 					<div className='grid grid-cols-4 grid-rows-4 gap-10  m-auto'>
 						<div className='my-12 col-span-2'>
-							<p className='text-xl text-mainText font-semibold'>Zobacz co Cię czeka!</p>
+							<p className='text-xl xl:text-3xl text-mainText font-semibold'>Zobacz co Cię czeka!</p>
 							<div className='my-2 space-y-3'>
 								{info.map((item, index) => (
-									<div key={index} className='flex items-start mt-4'>
+									<div key={index} className='flex items-start mt-8'>
 										<img src={Check} alt='icon' className='w-6 h-6 mr-2' />
-										<p className='text-thirdText text-lg font-medium'>{item.feature}</p>
+										<p className='text-thirdText text-lg font-medium xl:text-xl'>{item.feature}</p>
 									</div>
 								))}
 							</div>
