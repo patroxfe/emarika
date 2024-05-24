@@ -129,7 +129,7 @@ export default function Brief() {
 
 					<div className='grid lg:grid-cols-2 gap-4 text-xl'>
 						<div>
-							<label className='block font-medium '>Imie i nazwisko:</label>
+							<label className='block font-medium '>Imię i nazwisko:</label>
 							<input
 								onChange={e => setFirstName(e.target.value)}
 								required
@@ -233,7 +233,7 @@ export default function Brief() {
 										name='social_media'
 										className='form-radio h-5 w-5 text-indigo-600'
 									/>
-									<span className='ml-2'>Nie, chciałbym żebyście mi założyli w ramach nowej strony</span>
+									<span className='ml-2'>Nie, chciałbym żebyście założyli mi je w ramach nowej strony</span>
 								</label>
 							</div>
 						</div>
@@ -339,7 +339,7 @@ export default function Brief() {
 					</div>
 				</form>
 
-				
+
 				{/* POPUPPY */}
 				{showInvalidNamePopup && (
 					<div
