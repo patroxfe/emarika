@@ -11,44 +11,38 @@ export default function QnA() {
 
 	const questions = [
 		{
-			question: 'Kim jesteśmy?',
+			question: 'Ile trwa stworzenie strony internetowej?',
 			answer:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+				'Czas stworzenia strony internetowej jest w głównym stopniu zależny od "wielkości Twojej witryny" jak i również Twoich oczekiwań względem niej. W krótszym czasie przygotujemy dla Ciebie stronę wizytówkę, niż tą rozbudowaną, zawierająca kilka lub nawet kilkanaście podstron z najważniejszymi informacjami. Czas realizacji podany wyżej w cenniku jest uśredniony, dlatego też może być krótszy lub nieco dłuższy. Zdajemy sobie jednak sprawę, że wielu klientom zależy na czasie, dlatego chcemy sprostać ich oczekiwaniom.',
 		},
 		{
-			question: 'Nasze podejście do pracy i klienta',
-			answer:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.',
+			question: 'Czy wystawiamy fakturę VAT?',
+			answer: 'Tak, wystawiamy fakturę VAT 23%.',
 		},
 		{
-			question: 'Dlaczego jesteśmy warci zaufania?',
+			question: 'Czy nasze strony internetowe są zabezpieczone?',
 			answer:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+				'Tak, nasze strony internetowe są zabezpieczone. Wybieramy tylko dobrze wyselekcjonowane hostingi, posiadające m.in ochronę przed atakami typu DDoS.',
 		},
 		{
-			question: 'Doświadczenie i możliwości',
+			question: 'Czy po zakupie otrzymam prawa autorskie do stworzonej strony internetowej? ',
 			answer:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
+				'Tak, zgodnie z umową, którą zawieramy na samym początku, w momencie płatności otrzymasz prawa autorskie do swojej strony internetowej.',
 		},
 		{
-			question: 'Kim jesteśmy?',
+			question: 'Nie posiadam żadnych zdjęć na stronę internetową. Czy przygotujecie je za mnie?',
 			answer:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+				'Tak, przygotujemy je za Ciebie, wliczając je w koszty wykonania. Kupimy je z legalnego źródła, aby oszczędzić nam jak i potencjalnemu klientowi problemów prawnych w przyszłości.',
 		},
 		{
-			question: 'Nasze podejście do pracy i klienta',
+			question: 'Dlaczego oferujecie tak niskie ceny?',
 			answer:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.',
+				'Oferujemy niskie ceny m.in dlatego, że dopiero wchodzimy na komercyjną ścieżkę i w tym czasie chcemy zbudować solidne zaufanie jak i reputację. Warto jednak zaznaczyć, że ceny podane w sekcji powyżej (Cennik i oferty) to ceny minimalne za pakiet. Końcowa wycena projektu będzie zależna od tego jakie masz oczekiwania wobec swojej strony jak i od posiadanych przez Ciebie zasobów (logo, hosting, domena, zdjęcia itd.). ',
 		},
 		{
-			question: 'Dlaczego jesteśmy warci zaufania?',
+			question: 'Czy będę mógł śledzić cały proces powstawania mojej strony internetowej?',
 			answer:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-		},
-		{
-			question: 'Doświadczenie i możliwości',
-			answer:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
+				'Tak. Stawiamy na transparentność. W związku z tym, zostaniesz poinformowany o każdej zmianie statusu wykonywania zlecenia drogą mailową. ',
 		},
 	]
 
@@ -64,7 +58,7 @@ export default function QnA() {
 		<>
 			<section className='bg-customGray m-auto pt-8'>
 				<h2 className='text-mainText font-bold text-3xl text-center lg:text-4xl'>Q&A</h2>
-				<div className='my-14 max-w-2xl m-auto px-6 sm:px-10'>
+				<div className='py-14  m-auto px-6 sm:px-10 wrapper 2xl:px-0'>
 					{questions.map((item, index) => (
 						<div key={index} className='border-b border-stone-300'>
 							<div
