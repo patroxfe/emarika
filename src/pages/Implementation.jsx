@@ -177,13 +177,13 @@ export default function Implementation() {
 								))}
 							</div>
 						</div>
-						<div className='relative overflow-hidden row-start-2 col-span-3 rounded-2xl bg-[#1b2841ff]'>
-							<div className='implementation-img'></div>
+						<div className='relative overflow-hidden row-start-2 col-span-3 rounded-2xl bg-[#1b2841ff] [box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)]'>
+							<div className='implementation-img '></div>
 						</div>
 						{implementationProcess.map((step, index) => (
 							<div
 								key={index}
-								className={`relative p-6 bg-white shadow-md rounded-2xl  w-full auto-rows-auto ${
+								className={`relative p-6 bg-white [box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] rounded-2xl  w-full auto-rows-auto ${
 									(index === 3 && 'col-start-4 row-start-3') ||
 									(index === 4 && 'col-start-3 row-start-3') ||
 									(index === 5 && 'col-start-2 row-start-3') ||
@@ -194,8 +194,8 @@ export default function Implementation() {
 									Krok: <span className='font-semibold'>{index + 1}</span>/9
 								</p>
 								<div
-									className={`rounded-full w-20 h-20 bg-gradient-to-r ${step.fade} flex items-center justify-center`}>
-									<img src={step.img} alt='icon' className='w-12 h-12' />
+									className={`rounded-full w-20 h-20 bg-gradient-to-r ${step.fade} flex items-center justify-center `}>
+									<img src={step.img} alt='icon' className='w-12 h-12 ' />
 								</div>
 								<h3 className='text-xl font-bold text-mainText my-3'>{step.title}</h3>
 								<p className='text-md text-secondText'>{step.description}</p>

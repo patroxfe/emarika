@@ -94,7 +94,7 @@ export default function Pricing() {
 							category.options.map((option, index) => (
 								<div
 									key={index}
-									className='bg-white p-8 rounded-lg [box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] mb-6 md:min-w-[30%] max-w-sm cursor-pointer '>
+									className='bg-white p-8 rounded-lg [box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] mb-6 md:min-w-[30%] max-w-sm cursor-pointer hover:scale-105 transition-all duration-150'>
 									<Link to='/emarika/brief'>
 										<div className='text-center'>
 											<h4 className='text-2xl font-semibold text-mainText'>{option.title}</h4>
@@ -126,7 +126,7 @@ export default function Pricing() {
 					</div>
 					<Link
 						to='/emarika/brief'
-						className='text-white text-center text-2xl bg-gradient-to-r from-firstBlue to-secondBlue font-semibold rounded px-6 py-3 mt-10'>
+						className='text-white text-center text-2xl bg-gradient-to-r from-firstBlue to-secondBlue font-semibold rounded px-6 py-3 mt-10 hover:scale-110 transition-all duration-300'>
 						Uzyskaj wycenę
 					</Link>
 				</div>

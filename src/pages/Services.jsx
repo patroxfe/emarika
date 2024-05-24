@@ -53,7 +53,7 @@ export default function Services() {
 								className={`flex justify-center items-center w-14 h-14 rounded-full absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-gradient-to-r ${item.fade}`}>
 								<img src={item.img} alt='icon' className='w-8 h-8' />
 							</div>
-							<h4 className='text-mainText text-xl font-semibold'>{item.serviceName}</h4>
+							<h3 className='text-mainText text-xl font-semibold'>{item.serviceName}</h3>
 						</div>
 					))}
 				</div>

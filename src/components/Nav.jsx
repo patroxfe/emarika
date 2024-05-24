@@ -61,7 +61,7 @@ export default function Nav() {
 
 	useEffect(() => {
 		const url = window.location.href
-		if (url.includes('brief') || url.includes('regulamin')) {
+		if (url.includes('brief') || url.includes('regulamin') || url.includes('polityka')) {
 			setIsDarkNav(true)
 		}
 	}, [])
