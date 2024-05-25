@@ -63,7 +63,7 @@ function App() {
             element={
               <>
                 <Nav />
-				<Privacy />
+                <Privacy />
                 <Contact />
               </>
             }

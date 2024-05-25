@@ -12,7 +12,6 @@ import IntroductionImg from '../assets/introduction-img.svg'
 import ImplementingImg from '../assets/implementing-img.svg'
 import WebsiteImg from '../assets/website-img.svg'
 
-
 export default function Implementation() {
 	const info = [
 		{ feature: 'Użycie najnowszych technologii' },

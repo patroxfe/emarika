@@ -7,7 +7,7 @@ export default function Header() {
 
 	return (
 		<>
-			<section className='text-center lg:text-left lg:flex bg-[#1b2841ff] relative overflow-hidden py-24 px-0'>
+			<section className='text-center lg:text-left lg:flex bg-[#1b2841ff] relative overflow-hidden py-24 px-0' id='header'>
 				<div className='wrapper flex items-center justify-center text-center lg:gap-x-12 z-10 relative px-6 sm:px-10 md:px-14'>
 					<div className='lg:min-w-[30%] lg:max-w-[50%]'>
 						<h1 className='font-bold text-3xl pt-[130px] leading-10 max-w-3xl md:text-4xl lg:text-5xl'>
