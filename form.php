@@ -1,17 +1,22 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // TO I TAK CHYBA TRZEBA WSZYSTKO POZMIENIAC BO MAZYW SA ZLE 
+    // ZÓŁTE TO NAME Z FORMULARZA A TE PO $ TO NAZWA POD KTÓRĄ SĄ DZIAŁA TO MNIEJ WIĘCEJ JAK CONST :DD
+    // CLICKED ID Z SEKCJI PRICING DO SPRAWDZENIA CZY DZIAŁA RAZEM Z HOSTINGIEM
+    $clickedId = $_POST["id"] ?? '';
     // Pobieranie danych z formularza
-    $imie_nazwisko = $_POST['imie_nazwisko'] ?? '';
+    $imie_nazwisko = $_POST['name'] ?? '';
     $email = $_POST['email'] ?? '', FILTER_VALIDATE_EMAIL;
-    $telefon = $_POST['telefon'] ?? '';
-    $strona_internetowa = $_POST['strona_internetowa'] ?? '';
-    $opis_dzialalnosci = $_POST['opis_dzialalnosci'] ?? '';
-    $konkurencja = $_POST['konkurencja'] ?? '';
-    $social_media = $_POST['social_media'] ?? '';
-    $content = $_POST['content'] ?? '';
+    $telefon = $_POST['phone'] ?? '';
+    $strona_internetowa = $_POST['actualpage'] ?? '';
+    $opis_dzialalnosci = $_POST['description'] ?? '';
+    $konkurencja = $_POST['competitors'] ?? '';
+    $social_media = $_POST['media'] ?? '';
+    $tresc_na_strone = $_POST['material'] ?? '';
     $logo = $_POST['logo'] ?? '';
-    $wersje_jezykowe = $_POST['jezyk'] ?? '';
-    $dodatkowe_uwagi = $_POST['uwagi'] ?? '';
+    $wersje_jezykowe = $_POST['language'] ?? '';
+    $dodatkowe_uwagi = $_POST['notes'] ?? '';
 
     // Dodatkowe potwierdzenie emaila
     if (!$email) {
@@ -28,12 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     // Wstawianie danych do bazy danych
-    // $sql = "INSERT INTO klient (imie_nazwisko, email, telefon, strona_internetowa, opis_dzialalnosci, konkurencja, social_media, content, logo, jezyk, uwagi)
+    // $sql = "INSERT INTO klient (imie_nazwisko, email, telefon, strona_internetowa, opis_dzialalnosci, konkurencja, social_media, content, logo, wersje_jezykowe, dodatkowe_uwagi)
     //         VALUES ('$imie_nazwisko', '$email', '$telefon', '$strona_internetowa', '$opis_dzialalnosci', '$konkurencja', '$social_media', '$content', '$logo', '$wersje_jezykowe', '$dodatkowe_uwagi')";
 
         // Wstawianie danych do bazy danych stmt zabezpieczenie
-        $stmt = $conn->prepare("INSERT INTO klient (imie_nazwisko, email, telefon, strona_internetowa, opis_dzialalnosci, konkurencja, social_media, content, logo, jezyk, uwagi) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssssssssss", $imie_nazwisko, $email, $telefon, $strona_internetowa, $opis_dzialalnosci, $konkurencja, $social_media, $content, $logo, $wersje_jezykowe, $dodatkowe_uwagi);
+        $stmt = $conn->prepare("INSERT INTO klient (imie_nazwisko, email, telefon, strona_internetowa, opis_dzialalnosci, konkurencja, social_media, content, logo, wersje_jezykowe, dodatkowe_uwagi, ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssssssssss", $imie_nazwisko, $email, $telefon, $strona_internetowa, $opis_dzialalnosci, $konkurencja, $social_media, $tresc_na_strone, $logo, $wersje_jezykowe, $dodatkowe_uwagi);
         
 
     // if ($conn->query($sql) === TRUE) {
@@ -41,7 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Tworzenie wiadomości e-mail
         $to = "rafaldruzba@op.pl";
         $subject = "Nowe zgłoszenie od $imie_nazwisko";
-        $message = "Imię i nazwisko: $imie_nazwisko\n";
+        $message = "Co zainteresowało: $clickedId"
+        $message .= "Imię i nazwisko: $imie_nazwisko\n";
         $message .= "Email: $email\n";
         $message .= "Telefon: $telefon\n";
         $message .= "Adres dotychczasowej strony internetowej: $strona_internetowa\n";

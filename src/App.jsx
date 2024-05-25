@@ -11,67 +11,72 @@ import Contact from './pages/Contact';
 import Brief from './pages/Brief';
 import Terms from './pages/Terms';
 
-import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
+import {
+	BrowserRouter as Router,
+	Route,
+	Routes,
+	BrowserRouter,
+} from 'react-router-dom';
 import ScrollToTop from '../src/utils/scrollToTop'; // Import ScrollToTop
 import Privacy from './pages/Privacy';
 
 function App() {
-  return (
-    <>
-      <BrowserRouter>
-        <ScrollToTop /> {/* Add ScrollToTop here */}
-        <Routes>
-          <Route
-            path='/emarika/'
-            element={
-              <div>
-                <Nav />
-                <Header />
-                <Summary />
-                <AboutUs />
-                <Services />
-                <Implementation />
-                <Pricing />
-                <QnA />
-                <Contact />
-              </div>
-            }
-          />
+	return (
+		<>
+			<BrowserRouter>
+				<ScrollToTop /> {/* Add ScrollToTop here */}
+				<Routes>
+					<Route
+						path='/emarika/'
+						element={
+							<div>
+								<Nav />
+								<Header />
+								<Summary />
+								<AboutUs />
+								<Services />
+								<Implementation />
+								<Pricing />
+								<QnA />
+								<Contact />
+							</div>
+						}
+					/>
 
-          <Route
-            path='/emarika/brief'
-            element={
-              <>
-                <Nav />
-                <Brief />
-                <Contact />
-              </>
-            }
-          />
-          <Route
-            path='/emarika/regulamin'
-            element={
-              <>
-                <Nav />
-                <Terms />
-                <Contact />
-              </>
-            }
-          />
-          <Route
-            path='/emarika/polityka'
-            element={
-              <>
-                <Nav />
-                <Privacy />
-                <Contact />
-              </>
-            }
-          />
-        </Routes>
-      </BrowserRouter>
-    </>
-  );
+					<Route
+						path='/emarika/brief'
+						element={
+							<>
+								<Nav />
+								<Brief />
+								<Contact />
+							</>
+						}
+					/>
+					<Route
+						path='/emarika/regulamin'
+						element={
+							<>
+								<Nav />
+								<Terms />
+								<Contact />
+							</>
+						}
+					/>
+					<Route
+						path='/emarika/polityka'
+						element={
+							<>
+								<Nav />
+								<Privacy />
+								<Contact />
+							</>
+						}
+					/>
+				</Routes>
+			</BrowserRouter>
+		</>
+	);
 }
 
 export default App;

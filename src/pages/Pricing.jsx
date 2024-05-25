@@ -1,13 +1,36 @@
-import { Link } from 'react-router-dom'
-
+import { Link } from 'react-router-dom';
 export default function Pricing() {
+	//  TO CO MA WYSYŁAĆ ID KLIKNIĘTEGO OBIEKTU DO PHP, TRZEBA SPRAWDZIC POZNIEJ
+
+	const handleClick = (clickedId) => {
+		fetch('form.php', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ id: clickedId }),
+		})
+			.then((response) => response.text())
+			.then((data) => {
+				console.log('ID zostało wysłane do PHP: ' + data + clickedId);
+				// Tutaj możesz obsłużyć odpowiedź z serwera, jeśli jest taka potrzeba
+			})
+			.catch((error) => {
+				console.error('Błąd:', error);
+			});
+	};
+
+	// TU SIE KOŃCZY
+
 	const pricingOptions = [
 		{
 			category: 'onePage',
+			id: 1,
 			options: [
 				{
 					title: 'Strona Wizytówka',
-					heading: 'Idealna na początek oraz do podstawowej prezentacji oferty firmy w internecie.',
+					heading:
+						'Idealna na początek oraz do podstawowej prezentacji oferty firmy w internecie.',
 					description: 'Cała treść na stronie głównej',
 					leadTime: '3-6 dni',
 					price: '1300',
@@ -29,10 +52,12 @@ export default function Pricing() {
 		},
 		{
 			category: 'multiPage',
+			id: 2,
 			options: [
 				{
 					title: 'Strona Firmowa',
-					heading: 'Najczęściej wybierany wariant strony internetowej, standardowa prezentacja firmy w internecie.',
+					heading:
+						'Najczęściej wybierany wariant strony internetowej, standardowa prezentacja firmy w internecie.',
 					description: 'Strona główna + do 5 podstron',
 					leadTime: '5-8 dni',
 					price: '1800',
@@ -55,6 +80,7 @@ export default function Pricing() {
 		},
 		{
 			category: 'blogPage',
+			id: 3,
 			options: [
 				{
 					title: 'Strona Premium',
@@ -82,28 +108,39 @@ export default function Pricing() {
 				},
 			],
 		},
-	]
+	];
 
 	return (
 		<>
 			<section className='bg-white m-auto py-8 pb-20' id='cennik-i-oferty'>
-				<h2 className='text-mainText font-bold text-3xl text-center lg:text-4xl'>Cennik i oferty</h2>
+				<h2 className='text-mainText font-bold text-3xl text-center lg:text-4xl'>
+					Cennik i oferty
+				</h2>
 				<div className='flex flex-col items-center'>
 					<div className='mt-8 flex flex-col lg:flex-row gap-10 lg:justify-center md:gap-30 wrapper items-center lg:items-start px-6 sm:px-10 md:px-14 2xl:px-0 2xl:justify-start'>
-						{pricingOptions.map(category =>
+						{pricingOptions.map((category) =>
 							category.options.map((option, index) => (
 								<div
 									key={index}
-									className='bg-white p-8 rounded-lg [box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] mb-6 md:min-w-[30%] max-w-sm cursor-pointer hover:scale-105 transition-all duration-150'>
+									className='bg-white p-8 rounded-lg [box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] mb-6 md:min-w-[30%] max-w-sm cursor-pointer hover:scale-105 transition-all duration-150'
+									onClick={() => handleClick(option.title)} // Przekazujemy tytuł jako ID
+								>
 									<Link to='/emarika/brief'>
 										<div className='text-center'>
-											<h4 className='text-2xl font-semibold text-mainText'>{option.title}</h4>
-											<p className='text-md text-secondText mt-2'>{option.heading}</p>
+											<h4 className='text-2xl font-semibold text-mainText'>
+												{option.title}
+											</h4>
+											<p className='text-md text-secondText mt-2'>
+												{option.heading}
+											</p>
 										</div>
 										<div className='border-y-[1px] border-stone-300 py-2 my-4'>
-											<p className='text-md text-secondText font-semibold'>{option.description}</p>
+											<p className='text-md text-secondText font-semibold'>
+												{option.description}
+											</p>
 											<p className='text-md text-secondText'>
-												Czas realizacji: ok. <span className='font-semibold'>{option.leadTime}</span>
+												Czas realizacji: ok.{' '}
+												<span className='font-semibold'>{option.leadTime}</span>
 											</p>
 										</div>
 										<ul className='list-disc list-inside mt-2'>
@@ -115,9 +152,14 @@ export default function Pricing() {
 										</ul>
 										<div className='text-center mt-10'>
 											<p className='text-lg text-mainText mt-2 font-medium'>
-												Od <span className='text-4xl font-bold'>{option.price}zł</span>
+												Od{' '}
+												<span className='text-4xl font-bold'>
+													{option.price}zł
+												</span>
 											</p>
-											<p className='text-lg text-mainText font-medium'>+ VAT 23%</p>
+											<p className='text-lg text-mainText font-medium'>
+												+ VAT 23%
+											</p>
 										</div>
 									</Link>
 								</div>
@@ -126,11 +168,12 @@ export default function Pricing() {
 					</div>
 					<Link
 						to='/emarika/brief'
-						className='text-white text-center text-2xl bg-gradient-to-r from-firstBlue to-secondBlue font-semibold rounded px-6 py-3 mt-10 hover:scale-110 transition-all duration-300'>
+						className='text-white text-center text-2xl bg-gradient-to-r from-firstBlue to-secondBlue font-semibold rounded px-6 py-3 mt-10 hover:scale-110 transition-all duration-300'
+					>
 						Uzyskaj wycenę
 					</Link>
 				</div>
 			</section>
 		</>
-	)
+	);
 }
