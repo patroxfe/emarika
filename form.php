@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $clickedId = $_POST["id"] ?? '';
     // Pobieranie danych z formularza
     $imie_nazwisko = $_POST['name'] ?? '';
-    $email = $_POST['email'] ?? '', FILTER_VALIDATE_EMAIL;
+    $email = filter_var($_POST['email'] ?? '', FILTER_VALIDATE_EMAIL);
     $telefon = $_POST['phone'] ?? '';
     $strona_internetowa = $_POST['actualpage'] ?? '';
     $opis_dzialalnosci = $_POST['description'] ?? '';
@@ -30,20 +30,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     // Wstawianie danych do bazy danych
-    // $sql = "INSERT INTO klient (imie_nazwisko, email, telefon, strona_internetowa, opis_dzialalnosci, konkurencja, social_media, content, logo, wersje_jezykowe, dodatkowe_uwagi)
-    //         VALUES ('$imie_nazwisko', '$email', '$telefon', '$strona_internetowa', '$opis_dzialalnosci', '$konkurencja', '$social_media', '$content', '$logo', '$wersje_jezykowe', '$dodatkowe_uwagi')";
+    $stmt = $conn->prepare("INSERT INTO klient (id, name, email, phone, actualpage, description, competitors, media, material, logo, language, notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssssssssss", $clickedId, $imie_nazwisko, $email, $telefon, $strona_internetowa, $opis_dzialalnosci, $konkurencja, $social_media, $tresc_na_strone, $logo, $wersje_jezykowe, $dodatkowe_uwagi);
 
-        // Wstawianie danych do bazy danych stmt zabezpieczenie
-        $stmt = $conn->prepare("INSERT INTO klient (id, name, email, phone, actualpage, description, competitors, media, material, logo, language, notes, ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssssssssss", $imie_nazwisko, $email, $telefon, $strona_internetowa, $opis_dzialalnosci, $konkurencja, $social_media, $tresc_na_strone, $logo, $wersje_jezykowe, $dodatkowe_uwagi);
-        
-
-    // if ($conn->query($sql) === TRUE) {
-        if ($stmt->execute()) {
+    if ($stmt->execute()) {
         // Tworzenie wiadomości e-mail
         $to = "rafaldruzba@op.pl";
         $subject = "Nowe zgłoszenie od $imie_nazwisko";
-        $message = "Co zainteresowało: $clickedId"
+        $message = "Co zainteresowało: $clickedId\n";
         $message .= "Imię i nazwisko: $imie_nazwisko\n";
         $message .= "Email: $email\n";
         $message .= "Telefon: $telefon\n";
@@ -66,7 +60,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Wystąpił błąd podczas wysyłania wiadomości.";
         }
     } else {
-        // echo "Błąd: " . $sql . "<br>" . $conn->error;
         echo "Błąd: " . $stmt->error;
     }
     $stmt->close();

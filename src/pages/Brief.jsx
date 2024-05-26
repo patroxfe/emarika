@@ -101,7 +101,8 @@ export default function Brief() {
 		} catch (error) {
 			setShowPopup({
 				show: true,
-				message: ' "Catch error" przykro nam nie udało się wysłąć formularza',
+				message:
+					' "Catch error" przykro nam nie udało się wysłać formularza. Skontaktuj się z nami bezpośrednio przez email, przepraszamy!',
 			});
 			console.error('Wystąpił błąd:', error);
 		}
