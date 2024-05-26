@@ -1,9 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // TO I TAK CHYBA TRZEBA WSZYSTKO POZMIENIAC BO MAZYW SA ZLE 
-    // ZÓŁTE TO NAME Z FORMULARZA A TE PO $ TO NAZWA POD KTÓRĄ SĄ DZIAŁA TO MNIEJ WIĘCEJ JAK CONST :DD
-    // CLICKED ID Z SEKCJI PRICING DO SPRAWDZENIA CZY DZIAŁA RAZEM Z HOSTINGIEM
     $clickedId = $_POST["id"] ?? '';
     // Pobieranie danych z formularza
     $imie_nazwisko = $_POST['name'] ?? '';
@@ -37,8 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //         VALUES ('$imie_nazwisko', '$email', '$telefon', '$strona_internetowa', '$opis_dzialalnosci', '$konkurencja', '$social_media', '$content', '$logo', '$wersje_jezykowe', '$dodatkowe_uwagi')";
 
         // Wstawianie danych do bazy danych stmt zabezpieczenie
-        $stmt = $conn->prepare("INSERT INTO klient (imie_nazwisko, email, telefon, strona_internetowa, opis_dzialalnosci, konkurencja, social_media, content, logo, wersje_jezykowe, dodatkowe_uwagi, ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssssssssss", $imie_nazwisko, $email, $telefon, $strona_internetowa, $opis_dzialalnosci, $konkurencja, $social_media, $tresc_na_strone, $logo, $wersje_jezykowe, $dodatkowe_uwagi);
+        $stmt = $conn->prepare("INSERT INTO klient (id, name, email, phone, actualpage, description, competitors, media, material, logo, language, notes, ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssssssssss", $imie_nazwisko, $email, $telefon, $strona_internetowa, $opis_dzialalnosci, $konkurencja, $social_media, $tresc_na_strone, $logo, $wersje_jezykowe, $dodatkowe_uwagi);
         
 
     // if ($conn->query($sql) === TRUE) {
@@ -54,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message .= "Opis działalności i oczekiwania: $opis_dzialalnosci\n";
         $message .= "Konkurencja: $konkurencja\n";
         $message .= "Posiada konto firmowe w social media: $social_media\n";
-        $message .= "Dostarczy content: $content\n";
+        $message .= "Dostarczy content: $tresc_na_strone\n";
         $message .= "Posiada logo: $logo\n";
         $message .= "Wersje językowe: $wersje_jezykowe\n";
         $message .= "Dodatkowe uwagi: $dodatkowe_uwagi\n";
