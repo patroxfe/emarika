@@ -127,9 +127,9 @@ export default function Pricing() {
 								>
 									<Link to='/emarika/brief'>
 										<div className='text-center'>
-											<h4 className='text-2xl font-semibold text-mainText'>
+											<h3 className='text-2xl font-semibold text-mainText'>
 												{option.title}
-											</h4>
+											</h3>
 											<p className='text-md text-secondText mt-2'>
 												{option.heading}
 											</p>

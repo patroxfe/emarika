@@ -12,34 +12,34 @@ export default function Contanct() {
 
 	return (
 		<>
-			<section className='pt-20 pb-10 bg-[#111111]' id='kontakt'>
-				<div className='gap-5 wrapper flex flex-col text-center lg:text-left tracking-wider md:grid md:grid-cols-2 md:grid-rows-2 lg:grid-cols-4 lg:grid-rows-2 text-[#dbdbdb]'>
-					<div className='px-10 font-light'>
-						<h5 className='text-xl font-semibold'>E-mail</h5>
-						<p className=''>emarika@gmail.com</p>
-						<p className=''>rafaldruzba@op.pl</p>
-						<p className=''>patryksulich42@gmail.com</p>
+			<section className='pt-20 pb-10 lg:pb-0 bg-[#111111]' id='kontakt'>
+				<div className='gap-5 wrapper flex flex-col text-center lg:text-left tracking-wider md:grid md:grid-cols-2 md:grid-rows-2 lg:grid-cols-4 lg:grid-rows-2 text-[#dbdbdb] lg:space-x-8 px-10 xl:px-0'>
+					<div className=' font-light'>
+						<p className='py-1 text-2xl font-semibold mb-2'>E-mail</p>
+						<p className='py-1  text-xl'>emarika@gmail.com</p>
+						<p className='py-1  text-xl'>rafaldruzba@op.pl</p>
+						<p className='py-1  text-xl'>patryksulich42@gmail.com</p>
 					</div>
-					<div className='px-10 font-light flex flex-col '>
-						<h5 className='text-xl font-semibold'> Telefon</h5>
-						<a href='tel:+48791445104' className='cursor-pointer hover:text-blueMain'>
+					<div className=' font-light flex flex-col '>
+						<p className='text-2xl font-semibold mb-2'> Telefon</p>
+						<a href='tel:+48791445104' className='cursor-pointer hover:text-blueMain text-xl py-1'>
 							+48 791 445 104
 						</a>
-						<a href='tel:+48662131525' className='cursor-pointer hover:text-blueMain'>
+						<a href='tel:+48662131525' className='cursor-pointer hover:text-blueMain text-xl py-1'>
 							+48 662 131 525
 						</a>
 					</div>
-					<div className='px-10 lg:px-5 font-light'>
-						<h5 className='text-xl font-semibold'>Lokalizacja</h5>
-						<p>07-130 Łochów,</p>
-						<p> Sadowa 9</p>
+					<div className=' lg:px-5 font-light'>
+						<p className='text-2xl font-semibold mb-2'>Lokalizacja</p>
+						<p className='text-xl py-1'>07-130 Łochów,</p>
+						<p className='text-xl py-1'> Sadowa 9</p>
 					</div>
-					<div className='flex flex-col px-10 font-light'>
-						<h5 className='text-xl font-semibold'>Prawne</h5>
-						<Link to='/emarika/polityka/' className='cursor-pointer hover:text-blueMain'>
+					<div className='flex flex-col  font-light'>
+						<p className='text-2xl font-semibold mb-2'>Prawne</p>
+						<Link to='/emarika/polityka/' className='cursor-pointer hover:text-blueMain text-xl py-1'>
 							Polityka prywatności
 						</Link>
-						<Link to='/emarika/regulamin/' className=' cursor-pointer hover:text-blueMain'>
+						<Link to='/emarika/regulamin/' className=' cursor-pointer hover:text-blueMain text-xl py-1'>
 							Regulamin
 						</Link>
 					</div>

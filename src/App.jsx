@@ -1,24 +1,19 @@
-import './App.css';
-import Nav from './components/Nav';
-import AboutUs from './pages/AboutUs';
-import Summary from './pages/Summary';
-import Services from './pages/Services';
-import Header from './components/Header';
-import Implementation from './pages/Implementation';
-import Pricing from './pages/Pricing';
-import QnA from './pages/QnA';
-import Contact from './pages/Contact';
-import Brief from './pages/Brief';
-import Terms from './pages/Terms';
+import './App.css'
+import Nav from './components/Nav'
+import AboutUs from './pages/AboutUs'
+import Summary from './pages/Summary'
+import Services from './pages/Services'
+import Header from './components/Header'
+import Implementation from './pages/Implementation'
+import Pricing from './pages/Pricing'
+import QnA from './pages/QnA'
+import Contact from './pages/Contact'
+import Brief from './pages/Brief'
+import Terms from './pages/Terms'
 
-import {
-	BrowserRouter as Router,
-	Route,
-	Routes,
-	BrowserRouter,
-} from 'react-router-dom';
-import ScrollToTop from '../src/utils/scrollToTop'; // Import ScrollToTop
-import Privacy from './pages/Privacy';
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom'
+import ScrollToTop from '../src/utils/scrollToTop' // Import ScrollToTop
+import Privacy from './pages/Privacy'
 
 function App() {
 	return (
@@ -76,7 +71,7 @@ function App() {
 				</Routes>
 			</BrowserRouter>
 		</>
-	);
+	)
 }
 
-export default App;
+export default App
