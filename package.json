@@ -2,6 +2,7 @@
   "name": "emarika",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://emarika.pl",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
