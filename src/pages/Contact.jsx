@@ -36,10 +36,10 @@ export default function Contanct() {
 					</div>
 					<div className='flex flex-col  font-light'>
 						<p className='text-2xl font-semibold mb-2'>Prawne</p>
-						<Link to='/emarika/polityka/' className='cursor-pointer hover:text-blueMain text-xl py-1'>
+						<Link to='/politykaprywatnosci' className='cursor-pointer hover:text-blueMain text-xl py-1'>
 							Polityka prywatności
 						</Link>
-						<Link to='/emarika/regulamin/' className=' cursor-pointer hover:text-blueMain text-xl py-1'>
+						<Link to='/regulamin' className=' cursor-pointer hover:text-blueMain text-xl py-1'>
 							Regulamin
 						</Link>
 					</div>

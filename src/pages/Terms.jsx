@@ -7,7 +7,7 @@ function Terms() {
 	return (
 		<div className='bg-customGray py-52'>
 			<div className='max-w-4xl mx-auto p-6 bg-white [box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] rounded-lg text-black relative'>
-				<Link to='/emarika/' className='text-blueMain absolute right-0 -top-10 font-medium text-lg '>
+				<Link to='/' className='text-blueMain absolute right-0 -top-10 font-medium text-lg '>
 					Wróć do strony głównej
 				</Link>
 				<h2 className='text-2xl font-bold mb-6'>Regulamin świadczenia usług tworzenia stron internetowych</h2>

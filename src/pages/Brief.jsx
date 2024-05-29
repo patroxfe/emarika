@@ -141,7 +141,7 @@ export default function Brief() {
 		<div className='max-w-4xl mx-0 sm:mx-5 md:mx-20 lg:mx-auto p-4 relative flex flex-col items-center'>
 			<h3 className='text-3xl text-mainText font-bold mt-32'>Wypełnij formularz i uzyskaj wycenę</h3>
 			<div className='mb-32 mt-24 relative'>
-				<Link to='/emarika/' className='text-blueMain absolute right-0 -top-10 font-medium text-lg '>
+				<Link to='/' className='text-blueMain absolute right-0 -top-10 font-medium text-lg '>
 					Wróć do strony głównej
 				</Link>
 				<form

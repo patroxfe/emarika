@@ -22,7 +22,7 @@ function App() {
 				<ScrollToTop /> {/* Add ScrollToTop here */}
 				<Routes>
 					<Route
-						path='/emarika/'
+						path='/'
 						element={
 							<div>
 								<Nav />
@@ -39,7 +39,7 @@ function App() {
 					/>
 
 					<Route
-						path='/emarika/brief'
+						path='/brief'
 						element={
 							<>
 								<Nav />
@@ -49,7 +49,7 @@ function App() {
 						}
 					/>
 					<Route
-						path='/emarika/regulamin'
+						path='/regulamin'
 						element={
 							<>
 								<Nav />
@@ -59,7 +59,7 @@ function App() {
 						}
 					/>
 					<Route
-						path='/emarika/polityka'
+						path='/politykaprywatnosci'
 						element={
 							<>
 								<Nav />
