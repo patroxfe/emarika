@@ -1,27 +1,5 @@
 import { Link } from 'react-router-dom';
 export default function Pricing() {
-	//  TO CO MA WYSYŁAĆ ID KLIKNIĘTEGO OBIEKTU DO PHP, TRZEBA SPRAWDZIC POZNIEJ
-
-	const handleClick = (clickedId) => {
-		fetch('form.php', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({ id: clickedId }),
-		})
-			.then((response) => response.text())
-			.then((data) => {
-				console.log('ID zostało wysłane do PHP: ' + data + clickedId);
-				// Tutaj możesz obsłużyć odpowiedź z serwera, jeśli jest taka potrzeba
-			})
-			.catch((error) => {
-				console.error('Błąd:', error);
-			});
-	};
-
-	// TU SIE KOŃCZY
-
 	const pricingOptions = [
 		{
 			category: 'onePage',
@@ -33,7 +11,7 @@ export default function Pricing() {
 						'Idealna na początek oraz do podstawowej prezentacji oferty firmy w internecie.',
 					description: 'Cała treść na stronie głównej',
 					leadTime: '3-6 dni',
-					price: '1300',
+					price: '1100',
 					subpoints: [
 						'Koncepcja budowy strony',
 						'Szkic strony głównej',
@@ -60,7 +38,7 @@ export default function Pricing() {
 						'Najczęściej wybierany wariant strony internetowej, standardowa prezentacja firmy w internecie.',
 					description: 'Strona główna + do 5 podstron',
 					leadTime: '5-8 dni',
-					price: '1800',
+					price: '1600',
 					subpoints: [
 						'Koncepcja budowy strony',
 						'Szkic strony głównej i podstron',

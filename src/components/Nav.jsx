@@ -35,9 +35,9 @@ function NavLinks({
 						>
 							Cennik i oferty
 						</li>
-						<li className='cursor-pointer font-regular lg:text-lg hover:text-blueMain transition duration-300'>
+						{/* <li className='cursor-pointer font-regular lg:text-lg hover:text-blueMain transition duration-300'>
 							Portfolio
-						</li>
+						</li> */}
 					</>
 				)}
 				<div className='lg:hidden text-2xl text-center'>
