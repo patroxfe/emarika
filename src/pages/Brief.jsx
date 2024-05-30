@@ -15,6 +15,8 @@ export default function Brief() {
 	const [notes, setNotes] = useState('')
 	const [showPopup, setShowPopup] = useState({ show: false, message: '' })
 
+	const apiUrl = process.env.REACT_APP_API_URL || 'http://127.0.0.1:5000';
+
 	const handleSubmit = async e => {
 		e.preventDefault()
 		window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -55,7 +57,7 @@ export default function Brief() {
 
 		// Submit data to the backend
 		try {
-			await axios.post('http://your-backend-server-url/submit', {
+			await axios.post(`${apiUrl}/submit`, {
 				firstName,
 				email,
 				phone,
