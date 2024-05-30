@@ -1,17 +1,18 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
+import axios from 'axios'
 import { Link } from 'react-router-dom'
-import categoryId from './Pricing'
 
 export default function Brief() {
 	const [firstName, setFirstName] = useState('')
-	// const [lastName, setLastName] = useState('')
 	const [email, setEmail] = useState('')
 	const [phone, setPhone] = useState('')
+	const [description, setDescription] = useState('')
 	const [socialMedia, setSocialMedia] = useState('')
 	const [content, setContent] = useState('')
 	const [logo, setLogo] = useState('')
-	const [description, setDescription] = useState('')
 	const [language, setLanguage] = useState('')
+	const [competitors, setCompetitors] = useState('')
+	const [notes, setNotes] = useState('')
 	const [showPopup, setShowPopup] = useState({ show: false, message: '' })
 
 	const handleSubmit = async e => {
@@ -23,10 +24,7 @@ export default function Brief() {
 			return
 		}
 		if (!validateEmail(email)) {
-			setShowPopup({
-				show: true,
-				message: 'Nieprawidłowy adres e-mail. Spróbuj ponownie.',
-			})
+			setShowPopup({ show: true, message: 'Nieprawidłowy adres e-mail. Spróbuj ponownie.' })
 			return
 		}
 		if (!validatePhone(phone)) {
@@ -55,87 +53,37 @@ export default function Brief() {
 			return
 		}
 
-		const formData = new FormData()
-		formData.append('firstName', firstName)
-		// formData.append('lastName', lastName)
-		formData.append('email', email)
-		formData.append('phone', phone)
-		formData.append('media', socialMedia)
-		formData.append('material', content)
-		formData.append('logo', logo)
-		formData.append('language', language)
-		formData.append('category', categoryId)
-
+		// Submit data to the backend
 		try {
-			const response = await fetch('form.php', {
-				method: 'POST',
-				body: formData,
+			await axios.post('http://your-backend-server-url/submit', {
+				firstName,
+				email,
+				phone,
+				description,
+				socialMedia,
+				content,
+				logo,
+				language,
+				competitors,
+				notes,
 			})
-
-			if (response.ok) {
-				setShowPopup({
-					show: true,
-					message: 'Formularz został poprawnie wysłany!',
-				})
-				console.log('Dane zostały pomyślnie przesłane do PHP')
-				console.log('Wysłano formularz z danymi:', {
-					firstName,
-					// lastName,
-					email,
-					phone,
-					socialMedia,
-					content,
-					logo,
-					description,
-					language,
-				})
-			} else {
-				setShowPopup({
-					show: true,
-					message: 'Niestety nie udało się wysłać formularza, sprawdź adres email oraz inne dane, spróbuj jeszcze raz!',
-				})
-				console.error('Wystąpił problem podczas przesyłania danych do PHP')
-			}
+			setShowPopup({ show: true, message: 'Dane zostały wysłane pomyślnie!' })
 		} catch (error) {
-			setShowPopup({
-				show: true,
-				message:
-					' "Catch error" przykro nam nie udało się wysłać formularza. Skontaktuj się z nami bezpośrednio przez email, przepraszamy!',
-			})
-			console.error('Wystąpił błąd:', error)
+			setShowPopup({ show: true, message: 'Wystąpił błąd podczas wysyłania danych. Spróbuj ponownie później.' })
 		}
 	}
 
-	const validateName = name => {
-		return /[a-zA-Z]/.test(name)
-	}
-
-	const validateEmail = email => {
-		const re = /\S+@\S+\.\S+/
-		return re.test(email)
-	}
-
-	const validatePhone = phone => {
-		// Usunięcie wszystkich spacji z ciągu
-		const cleanedPhone = phone.replace(/\s+/g, '')
-		// Sprawdzenie, czy ciąg zawiera dokładnie 9 cyfr
-		return /^[0-9]{9}$/.test(cleanedPhone)
-	}
-
-	const validateDescription = text => {
-		return text.length >= 10
-	}
-
+	const validateName = name => /[a-zA-Z]/.test(name)
+	const validateEmail = email => /\S+@\S+\.\S+/.test(email)
+	const validatePhone = phone => /^[0-9]{9}$/.test(phone.replace(/\s+/g, ''))
+	const validateDescription = text => text.length >= 10
 	const validateCheckbox = () => {
 		const socialMediaChecked = document.querySelectorAll('input[name=media]:checked').length > 0
 		const contentChecked = document.querySelectorAll('input[name=material]:checked').length > 0
 		const logoChecked = document.querySelectorAll('input[name=logo]:checked').length > 0
 		return socialMediaChecked && contentChecked && logoChecked
 	}
-
-	const validateLanguage = () => {
-		return language.length >= 3
-	}
+	const validateLanguage = () => language.length >= 3
 
 	return (
 		<div className='max-w-4xl mx-0 sm:mx-5 md:mx-20 lg:mx-auto p-4 relative flex flex-col items-center'>
@@ -214,6 +162,7 @@ export default function Brief() {
 							Wskaż strony konkurencji oraz inne strony, które Ci się podobają:
 						</label>
 						<textarea
+							onChange={e => setCompetitors(e.target.value)}
 							className='block w-full rounded-md border-[1px] border-borderForm mt-2 sm:text-sm bg-transparent py-2 px-5 focus:ring-2 focus:ring-offset-2 focus:ring-mainText'
 							rows='4'
 							name='competitors'></textarea>
@@ -241,7 +190,7 @@ export default function Brief() {
 										type='radio'
 										name='media'
 										value='Nie, nie potrzebuję'
-										className='form-radio h-5 w-5 text-mainText	 focus:ring-2 focus:ring-offset-2 focus:ring-mainText'
+										className='form-radio h-5 w-5 text-mainText focus:ring-2 focus:ring-offset-2 focus:ring-mainText'
 									/>
 									<span className='ml-2'>Nie, nie potrzebuję</span>
 								</label>
@@ -300,7 +249,6 @@ export default function Brief() {
 										onChange={e => setLogo(e.target.value)}
 										type='radio'
 										name='logo'
-										// value='Tak'
 										className='form-radio h-5 w-5 text-indigo-600 focus:ring-offset-2 focus:ring-mainText'
 									/>
 									<span className='ml-2'>Tak</span>
@@ -312,7 +260,6 @@ export default function Brief() {
 										onChange={e => setLogo(e.target.value)}
 										type='radio'
 										name='logo'
-										// value='Nie, chciałbym abyście stworzyli je dla mnie'
 										className='form-radio h-5 w-5 text-indigo-600 focus:ring-offset-2 focus:ring-mainText'
 									/>
 									<span className='ml-2'>Nie, chciałbym abyście stworzyli je dla mnie</span>
@@ -324,7 +271,6 @@ export default function Brief() {
 										onChange={e => setLogo(e.target.value)}
 										type='radio'
 										name='logo'
-										// value='Nie'
 										className='form-radio h-5 w-5 text-indigo-600 focus:ring-offset-2 focus:ring-mainText'
 									/>
 									<span className='ml-2'>Nie</span>
@@ -336,10 +282,10 @@ export default function Brief() {
 					<div>
 						<label className='block text-xl font-medium'>Czy potrzebujesz dodatkowych wersji językowych?:</label>
 						<input
-							type='url'
+							type='text'
 							onChange={e => setLanguage(e.target.value)}
 							name='language'
-							className=' block w-full rounded-md border-[1px] border-borderForm mt-2  sm:text-sm bg-transparent py-2 px-5 focus:ring-2 focus:ring-offset-2 focus:ring-mainText'
+							className='block w-full rounded-md border-[1px] border-borderForm mt-2 sm:text-sm bg-transparent py-2 px-5 focus:ring-2 focus:ring-offset-2 focus:ring-mainText'
 							placeholder='(Jeśli tak to jakich?)'
 						/>
 					</div>
@@ -348,10 +294,11 @@ export default function Brief() {
 							Czy masz dodatkowe uwagi, propozycje, które mogą być przydatne przy wycenie?:
 						</label>
 						<input
-							type='url'
+							type='text'
+							onChange={e => setNotes(e.target.value)}
 							name='notes'
 							placeholder='(Chciałbym mapę google, potrzebuję około 10 podstron. Według mnie strona wyglądałaby ciekawie z gradientem!, lubie pieski)'
-							className=' block w-full rounded-md border-[1px] border-borderForm mt-2  sm:text-sm bg-transparent py-2 px-5 focus:ring-2 focus:ring-offset-2 focus:ring-mainText'
+							className='block w-full rounded-md border-[1px] border-borderForm mt-2 sm:text-sm bg-transparent py-2 px-5 focus:ring-2 focus:ring-offset-2 focus:ring-mainText'
 						/>
 					</div>
 
