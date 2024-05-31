@@ -7,9 +7,19 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 const app = express()
-app.use(cors())
+
+// Konfiguracja CORS
+const corsOptions = {
+	origin: 'https://emarika.pl', // Twoja domena frontendowa
+	methods: ['GET', 'POST', 'OPTIONS'], // Dozwolone metody
+	allowedHeaders: ['Content-Type', 'Authorization'], // Dozwolone nagłówki
+	optionsSuccessStatus: 200, // Dla legacy browserów
+}
+
+app.use(cors(corsOptions))
 app.use(bodyParser.json())
 
+// Replace with your Hostinger database credentials
 const db = mysql.createConnection({
 	host: process.env.DB_HOST,
 	port: process.env.DB_PORT,
@@ -25,6 +35,8 @@ db.connect(err => {
 	}
 	console.log('Connected to database.')
 })
+
+app.options('*', cors(corsOptions)) // Preflight OPTIONS request
 
 app.post('/submit', (req, res) => {
 	const { firstName, email, phone, description, socialMedia, content, logo, language, competitors, notes } = req.body

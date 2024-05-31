@@ -15,7 +15,8 @@ export default function Brief() {
 	const [notes, setNotes] = useState('')
 	const [showPopup, setShowPopup] = useState({ show: false, message: '' })
 
-	const apiUrl = process.env.REACT_APP_API_URL || 'http://emarika.pl/api';
+	// const apiUrl = process.env.REACT_APP_API_URL || 'http://emarika.pl/api';
+	const apiUrl = process.env.REACT_APP_API_URL || 'https://emarika-backend.herokuapp.com/api'
 
 	const handleSubmit = async e => {
 		e.preventDefault()
@@ -55,7 +56,6 @@ export default function Brief() {
 			return
 		}
 
-	
 		try {
 			await axios.post(`${apiUrl}/submit`, {
 				firstName,
