@@ -1,8 +1,8 @@
-import express from 'express'
-import bodyParser from 'body-parser'
-import mysql from 'mysql'
-import cors from 'cors'
-import dotenv from 'dotenv'
+const express = require('express')
+const bodyParser = require('body-parser')
+const mysql = require('mysql')
+const cors = require('cors')
+const dotenv = require('dotenv')
 
 dotenv.config()
 
@@ -10,7 +10,6 @@ const app = express()
 app.use(cors())
 app.use(bodyParser.json())
 
-// Replace with your Hostinger database credentials
 const db = mysql.createConnection({
 	host: process.env.DB_HOST,
 	port: process.env.DB_PORT,
