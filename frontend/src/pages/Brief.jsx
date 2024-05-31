@@ -55,7 +55,7 @@ export default function Brief() {
 			return
 		}
 
-		// Submit data to the backend
+	
 		try {
 			await axios.post(`${apiUrl}/submit`, {
 				firstName,
