@@ -10,16 +10,16 @@ const app = express()
 
 // Konfiguracja CORS
 const corsOptions = {
-	origin: 'https://emarika.pl', // Twoja domena frontendowa
-	methods: ['GET', 'POST', 'OPTIONS'], // Dozwolone metody
-	allowedHeaders: ['Content-Type', 'Authorization'], // Dozwolone nagłówki
-	optionsSuccessStatus: 200, // Dla legacy browserów
+	origin: 'https://emarika.pl',
+	methods: ['GET', 'POST', 'OPTIONS'],
+	allowedHeaders: ['Content-Type', 'Authorization'],
+	optionsSuccessStatus: 200,
 }
 
 app.use(cors(corsOptions))
 app.use(bodyParser.json())
 
-// Replace with your Hostinger database credentials
+// Połączenie z bazą danych
 const db = mysql.createConnection({
 	host: process.env.DB_HOST,
 	port: process.env.DB_PORT,
