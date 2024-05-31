@@ -14,7 +14,7 @@ export default function Summary() {
 			icon: MobileImg,
 		},
 		{
-			title: 'Niskie ceny',
+			title: 'Atrakcyjne ceny',
 			description:
 				'Staramy się połączyć jakość z kosztem wykonania. Jesteśmy jedną z najlepszych opcji na polskim rynku! Nasze ceny są nieporównywalnie niższe niż u konkurencji.',
 			fade: 'from-firstGreen to-secondGreen',

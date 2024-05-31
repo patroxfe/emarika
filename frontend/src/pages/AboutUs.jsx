@@ -21,7 +21,7 @@ export default function AboutUs() {
 				'Jako deweloperzy stron internetowych rozumiemy, że każdy klient ma unikalne cele i potrzeby dotyczące swojej witryny. Dlatego też stawiamy za cel nie tylko zrozumienie tych potrzeb, ale także dostosowanie naszych usług i rozwiązań do indywidualnych wymagań każdego klienta. Nasz zespół jest gotowy do słuchania, doradzania i współpracy na każdym etapie projektu, aby zapewnić optymalne rezultaty. Dzięki temu podejściu możemy zagwarantować, że każda strona internetowa, którą tworzymy, jest nie tylko funkcjonalna i atrakcyjna wizualnie, ale również idealnie dopasowana do potrzeb i celów naszych klientów.',
 		},
 		{
-			question: 'Dlaczego jesteśmy warci zaufania?',
+			question: 'Dlaczego jesteśmy godni zaufania?',
 			answer:
 				'Jesteśmy pasjonatami, którzy nie tylko tworzą strony internetowe, ale też budują zaufanie. Nasza praca opiera się na solidnych fundamentach kodu i kreatywnym podejściu do projektowania. Każdy z naszych klientów może polegać na naszym doświadczeniu i zaangażowaniu w każdym etapie procesu tworzenia strony. Wiemy, że zaufanie jest kluczowe, dlatego stawiamy na transparentność, komunikację i rzetelność w każdym projekcie. Jesteśmy gotowi udowodnić naszą wiarygodność poprzez nasze działania i rezultaty.',
 		},

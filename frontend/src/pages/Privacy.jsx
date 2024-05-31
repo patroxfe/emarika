@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 
 export default function Privacy() {
 	return (
-		<div className='bg-customGray py-52'>
-			<div className='max-w-4xl mx-auto p-6 bg-white [box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] rounded-lg text-black relative'>
-				<Link to='/' className='text-blueMain absolute right-0 -top-10 font-medium text-lg '>
+		<div className='bg-customGray py-52 px-6 sm:px-10  2xl:px-0'>
+			<div className='max-w-4xl mx-auto p-6 bg-white [box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] rounded-lg text-black relative '>
+				<Link to='/' className='text-blueMain absolute right-0 -top-10 font-bold text-lg '>
 					Wróć do strony głównej
 				</Link>
 				<h2 className='text-2xl font-bold mb-6'>Polityka prywatności eMarika.pl</h2>
