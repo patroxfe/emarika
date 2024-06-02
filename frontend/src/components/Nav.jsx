@@ -114,7 +114,7 @@ export default function Nav() {
 					</Link>
 				) : (
 					<h1 className='text-xl font-semibold z-50 cursor-pointer' onClick={() => scrollToSection('header')}>
-						eMarika.pl
+						<span className='text-blueMain'>e</span>Marika.pl
 					</h1>
 				)}
 				<NavLinks
