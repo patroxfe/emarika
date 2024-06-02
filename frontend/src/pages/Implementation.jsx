@@ -140,7 +140,7 @@ export default function Implementation() {
 							</button>
 						</div>
 
-						<div className='relative p-6 bg-white [box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] rounded-2xl '>
+						<div className='relative p-6 bg-white [box-shadow:_0px_0px_13px_rgb(0_0_0_/_15%)] rounded-2xl '>
 							<p className='absolute right-6 top-4 text-thirdText font-medium text-lg'>
 								Krok: <span className='font-semibold'>{currentIndex + 1}</span>
 								/9
@@ -176,13 +176,13 @@ export default function Implementation() {
 								))}
 							</div>
 						</div>
-						<div className='relative overflow-hidden row-start-2 col-span-3 rounded-2xl bg-[#1b2841ff] [box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)]'>
+						<div className='relative overflow-hidden row-start-2 col-span-3 rounded bg-[#1b2841ff] [box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)]'>
 							<div className='implementation-img '></div>
 						</div>
 						{implementationProcess.map((step, index) => (
 							<div
 								key={index}
-								className={`relative p-6 bg-white [box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] rounded-2xl  w-full auto-rows-auto ${
+								className={`relative p-6 bg-white [box-shadow:_0px_0px_13px_rgb(0_0_0_/_15%)] rounded  w-full auto-rows-auto ${
 									(index === 3 && 'col-start-4 row-start-3') ||
 									(index === 4 && 'col-start-3 row-start-3') ||
 									(index === 5 && 'col-start-2 row-start-3') ||

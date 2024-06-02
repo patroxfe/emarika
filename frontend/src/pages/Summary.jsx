@@ -43,8 +43,8 @@ export default function Summary() {
 					<div className='lg:order-2 lg:w-1/2 md:max-w-2xl space-y-8'>
 						{questions.map((item, index) => (
 							<div key={index}>
-								<div className={`[box-shadow:_0px_0px_33px_rgb(0_0_0_/_25%)] rounded-xl flex p-5 ${item.fade}`}>
-									<div className='flex items-center justify-center bg-gradient-to-r w-14 h-14 mr-3 rounded-full flex-shrink-0'>
+								<div className={`[box-shadow:_0px_0px_13px_rgb(0_0_0_/_15%)] rounded flex p-5 ${item.fade}`}>
+									<div className='flex items-center justify-center bg-gradient-to-r w-14 h-14 mr-5 rounded-full flex-shrink-0'>
 										<img src={item.icon} alt='icon' className='w-9 h-9' />
 									</div>
 									<div className='flex flex-col'>

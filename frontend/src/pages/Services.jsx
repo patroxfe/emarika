@@ -48,7 +48,7 @@ export default function Services() {
 					{services.map((item, index) => (
 						<div
 							key={index}
-							className='md:min-w-[40%] lg:min-w-[30%] [box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] text-center py-10 md:mx-5 rounded cursor-pointer relative hover:scale-110 transition fix-block'>
+							className='md:min-w-[40%] lg:min-w-[30%] [box-shadow:_0px_0px_13px_rgb(0_0_0_/_15%)] text-center py-10 md:mx-5 rounded cursor-pointer relative hover:scale-110 transition fix-block'>
 							<div
 								className={`flex justify-center items-center w-14 h-14 rounded-full absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-gradient-to-r ${item.fade}`}>
 								<img src={item.img} alt='icon' className='w-8 h-8' />

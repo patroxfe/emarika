@@ -100,7 +100,7 @@ export default function Brief() {
 				</Link>
 				<form
 					onSubmit={handleSubmit}
-					className='space-y-6 text-black [box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] rounded-2xl p-5 lg:p-10 '
+					className='space-y-6 text-black [box-shadow:_0px_0px_13px_rgb(0_0_0_/_15%)] rounded p-5 lg:p-10 '
 					noValidate>
 					<div className='grid lg:grid-cols-2 gap-4 text-xl'>
 						<div>

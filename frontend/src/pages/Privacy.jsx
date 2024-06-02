@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 export default function Privacy() {
 	return (
 		<div className='bg-customGray py-52 px-6 sm:px-10  2xl:px-0'>
-			<div className='max-w-4xl mx-auto p-6 bg-white [box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)] rounded-lg text-black relative '>
+			<div className='max-w-4xl mx-auto p-6 bg-white [box-shadow:_0px_0px_13px_rgb(0_0_0_/_15%)] rounded text-black relative '>
 				<Link to='/' className='text-blueMain absolute right-0 -top-10 font-bold text-lg '>
 					Wróć do strony głównej
 				</Link>

@@ -93,8 +93,8 @@ export default function Pricing() {
 							category.options.map((option, index) => (
 								<div
 									key={index}
-									className={`bg-white p-8 rounded-lg mb-6 md:min-w-[30%] max-w-sm cursor-pointer hover:scale-105 transition-all duration-150 ${
-										category.index === 1 ? 'colored-box-shadow' : '[box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)]'
+									className={`bg-white p-8 rounded mb-6 md:min-w-[30%] max-w-sm cursor-pointer hover:scale-105 transition-all duration-150 ${
+										category.index === 1 ? 'colored-box-shadow' : '[box-shadow:_0px_0px_13px_rgb(0_0_0_/_15%)]'
 									}`}>
 									<Link to='/brief'>
 										<div className='text-center'>
