@@ -140,7 +140,7 @@ export default function Implementation() {
 							</button>
 						</div>
 
-						<div className='relative p-6 bg-white [box-shadow:_0px_0px_13px_rgb(0_0_0_/_15%)] rounded-2xl '>
+						<div className='relative p-6 bg-white [box-shadow:_0px_0px_13px_rgb(0_0_0_/_15%)] rounded '>
 							<p className='absolute right-6 top-4 text-thirdText font-medium text-lg'>
 								Krok: <span className='font-semibold'>{currentIndex + 1}</span>
 								/9
