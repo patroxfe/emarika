@@ -16,7 +16,6 @@ export default function Brief() {
 	const [notes, setNotes] = useState('')
 	const [hosting, setHosting] = useState('')
 	const [showPopup, setShowPopup] = useState({ show: false, message: '' })
-
 	const [recap, setRecap] = useState(null)
 	const SITEKEY = '6Ldu8O8pAAAAAAz4sR4SS5K0ouTe_kl27O9dI1zp'
 
@@ -81,6 +80,12 @@ export default function Brief() {
 			setHosting('')
 			setCompetitors('')
 			setNotes('')
+			setRecap(null)
+
+			// Resetowanie reCAPTCHA
+			if (window.grecaptcha) {
+				window.grecaptcha.reset()
+			}
 		} catch (error) {
 			setShowPopup({
 				show: true,
@@ -117,6 +122,7 @@ export default function Brief() {
 						<div>
 							<label className='block font-medium'>Imię i nazwisko:</label>
 							<input
+								value={firstName}
 								onChange={e => setFirstName(e.target.value)}
 								required
 								type='text'
@@ -127,6 +133,7 @@ export default function Brief() {
 						<div>
 							<label className='block font-medium'>Adres e-mail:</label>
 							<input
+								value={email}
 								onChange={e => setEmail(e.target.value)}
 								required
 								type='email'
@@ -142,6 +149,7 @@ export default function Brief() {
 						<div>
 							<label className='block text-xl font-medium'>Numer telefonu:</label>
 							<input
+								value={phone}
 								onChange={e => setPhone(e.target.value)}
 								type='tel'
 								name='phone'
@@ -166,6 +174,7 @@ export default function Brief() {
 							Krótki opis prowadzonej działalności i oczekiwania wobec nowej strony internetowej:
 						</label>
 						<textarea
+							value={description}
 							onChange={e => setDescription(e.target.value)}
 							name='description'
 							className='block w-full rounded-md border-[1px] border-borderForm mt-2 sm:text-sm bg-transparent py-2 px-5 focus:ring-2 focus:ring-offset-2 focus:ring-mainText'
@@ -178,6 +187,7 @@ export default function Brief() {
 							Wskaż strony konkurencji oraz inne strony, które Ci się podobają:
 						</label>
 						<textarea
+							value={competitors}
 							onChange={e => setCompetitors(e.target.value)}
 							className='block w-full rounded-md border-[1px] border-borderForm mt-2 sm:text-sm bg-transparent py-2 px-5 focus:ring-2 focus:ring-offset-2 focus:ring-mainText'
 							rows='4'
@@ -190,6 +200,7 @@ export default function Brief() {
 							<div>
 								<label className='inline-flex items-center text-black'>
 									<input
+										checked={socialMedia === 'Tak'}
 										onChange={e => setSocialMedia(e.target.value)}
 										type='radio'
 										name='media'
@@ -202,6 +213,7 @@ export default function Brief() {
 							<div>
 								<label className='inline-flex items-center text-black'>
 									<input
+										checked={socialMedia === 'Nie, nie potrzebuję'}
 										onChange={e => setSocialMedia(e.target.value)}
 										type='radio'
 										name='media'
@@ -214,6 +226,7 @@ export default function Brief() {
 							<div>
 								<label className='inline-flex items-center text-black'>
 									<input
+										checked={socialMedia === 'Nie, ale planuję założyć'}
 										onChange={e => setSocialMedia(e.target.value)}
 										type='radio'
 										name='media'
@@ -232,6 +245,7 @@ export default function Brief() {
 							<div>
 								<label className='inline-flex items-center text-black'>
 									<input
+										checked={content === 'Tak, posiadam'}
 										onChange={e => setContent(e.target.value)}
 										type='radio'
 										name='material'
@@ -244,6 +258,7 @@ export default function Brief() {
 							<div>
 								<label className='inline-flex items-center text-black'>
 									<input
+										checked={content === 'Nie, potrzebuję pomocy'}
 										onChange={e => setContent(e.target.value)}
 										type='radio'
 										name='material'
@@ -262,9 +277,11 @@ export default function Brief() {
 							<div>
 								<label className='inline-flex items-center text-black'>
 									<input
+										checked={logo === 'Tak'}
 										onChange={e => setLogo(e.target.value)}
 										type='radio'
 										name='logo'
+										value='Tak'
 										className='form-radio h-5 w-5 text-indigo-600 focus:ring-offset-2 focus:ring-mainText'
 									/>
 									<span className='ml-2'>Tak</span>
@@ -273,9 +290,11 @@ export default function Brief() {
 							<div>
 								<label className='inline-flex items-center text-black'>
 									<input
+										checked={logo === 'Nie, chciałbym abyście mi je stworzyli'}
 										onChange={e => setLogo(e.target.value)}
 										type='radio'
 										name='logo'
+										value='Nie, chciałbym abyście mi je stworzyli'
 										className='form-radio h-5 w-5 text-indigo-600 focus:ring-offset-2 focus:ring-mainText'
 									/>
 									<span className='ml-2'>Nie, chciałbym abyście mi je stworzyli</span>
@@ -284,9 +303,11 @@ export default function Brief() {
 							<div>
 								<label className='inline-flex items-center text-black'>
 									<input
+										checked={logo === 'Nie potrzebuję'}
 										onChange={e => setLogo(e.target.value)}
 										type='radio'
 										name='logo'
+										value='Nie potrzebuję'
 										className='form-radio h-5 w-5 text-indigo-600 focus:ring-offset-2 focus:ring-mainText'
 									/>
 									<span className='ml-2'>Nie potrzebuję</span>
@@ -303,9 +324,24 @@ export default function Brief() {
 							<div>
 								<label className='inline-flex items-center text-black'>
 									<input
+										checked={hosting === 'Tak'}
 										onChange={e => setHosting(e.target.value)}
 										type='radio'
 										name='hosting'
+										value='Tak'
+										className='form-radio h-5 w-5 text-indigo-600 focus:ring-offset-2 focus:ring-mainText'
+									/>
+									<span className='ml-2'>Tak</span>
+								</label>
+							</div>
+							<div>
+								<label className='inline-flex items-center text-black'>
+									<input
+										checked={hosting === 'Nie, ale załatwię to we własnym zakresie'}
+										onChange={e => setHosting(e.target.value)}
+										type='radio'
+										name='hosting'
+										value='Nie, ale załatwię to we własnym zakresie'
 										className='form-radio h-5 w-5 text-indigo-600 focus:ring-offset-2 focus:ring-mainText'
 									/>
 									<span className='ml-2'>Nie, ale załatwię to we własnym zakresie</span>
@@ -314,23 +350,14 @@ export default function Brief() {
 							<div>
 								<label className='inline-flex items-center text-black'>
 									<input
+										checked={hosting === 'Nie, chcę abyście uwzględnili to w moim projekcie'}
 										onChange={e => setHosting(e.target.value)}
 										type='radio'
 										name='hosting'
+										value='Nie, chcę abyście uwzględnili to w moim projekcie'
 										className='form-radio h-5 w-5 text-indigo-600 focus:ring-offset-2 focus:ring-mainText'
 									/>
 									<span className='ml-2'>Nie, chcę abyście uwzględnili to w moim projekcie</span>
-								</label>
-							</div>
-							<div>
-								<label className='inline-flex items-center text-black'>
-									<input
-										onChange={e => setHosting(e.target.value)}
-										type='radio'
-										name='hosting'
-										className='form-radio h-5 w-5 text-indigo-600 focus:ring-offset-2 focus:ring-mainText'
-									/>
-									<span className='ml-2'>Tak</span>
 								</label>
 							</div>
 						</div>
@@ -339,6 +366,7 @@ export default function Brief() {
 					<div>
 						<label className='block text-xl font-medium'>Czy potrzebujesz dodatkowych wersji językowych?:</label>
 						<input
+							value={language}
 							type='text'
 							onChange={e => setLanguage(e.target.value)}
 							name='language'
@@ -351,6 +379,7 @@ export default function Brief() {
 							Czy masz dodatkowe uwagi, propozycje, które mogą być przydatne przy wycenie?:
 						</label>
 						<input
+							value={notes}
 							type='text'
 							onChange={e => setNotes(e.target.value)}
 							name='notes'
