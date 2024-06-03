@@ -1,16 +1,16 @@
-import { useState } from 'react'
-import Check from '../assets/checkmark.svg'
-import ArrowPrevious from '../assets/arrowprevious.svg'
-import ArrowNext from '../assets/arrownext.svg'
-import PlanningImg from '../assets/planning-img.svg'
-import CodingImg from '../assets/coding-img.svg'
-import DesigningImg from '../assets/designing-img.svg'
-import TestingImg from '../assets/testing-img.svg'
-import FixingImg from '../assets/fixing-img.svg'
-import StartImg from '../assets/start-img.svg'
-import IntroductionImg from '../assets/introduction-img.svg'
-import ImplementingImg from '../assets/implementing-img.svg'
-import WebsiteImg from '../assets/website-img.svg'
+import { useState } from 'react';
+import Check from '../assets/checkmark.svg';
+import ArrowPrevious from '../assets/arrowprevious.svg';
+import ArrowNext from '../assets/arrownext.svg';
+import PlanningImg from '../assets/planning-img.svg';
+import CodingImg from '../assets/coding-img.svg';
+import DesigningImg from '../assets/designing-img.svg';
+import TestingImg from '../assets/testing-img.svg';
+import FixingImg from '../assets/fixing-img.svg';
+import StartImg from '../assets/start-img.svg';
+import IntroductionImg from '../assets/introduction-img.svg';
+import ImplementingImg from '../assets/implementing-img.svg';
+import WebsiteImg from '../assets/website-img.svg';
 
 export default function Implementation() {
 	const info = [
@@ -20,12 +20,13 @@ export default function Implementation() {
 		{ feature: 'Bardzo krótki czas oczekiwania na realizację' },
 		{ feature: 'Indywidualne podejście do klienta i projektu' },
 		{ feature: 'Stały kontakt z klientem na każdym etapie' },
-	]
+	];
 
 	const implementationProcess = [
 		{
 			title: 'Tutaj zaczynamy',
-			description: 'Rozpoczynamy od szczegółowej rozmowy z klientem, aby dokładnie poznać jego potrzeby i oczekiwania.',
+			description:
+				'Rozpoczynamy od szczegółowej rozmowy z klientem, aby dokładnie poznać jego potrzeby i oczekiwania.',
 			fade: 'from-firstViolet to-secondViolet',
 			img: StartImg,
 		},
@@ -85,35 +86,44 @@ export default function Implementation() {
 			fade: 'from-firstGreen to-secondGreen',
 			img: WebsiteImg,
 		},
-	]
+	];
 
-	const [currentIndex, setCurrentIndex] = useState(0)
+	const [currentIndex, setCurrentIndex] = useState(0);
 
 	const handleNext = () => {
 		if (currentIndex < implementationProcess.length - 1) {
-			setCurrentIndex(currentIndex + 1)
+			setCurrentIndex(currentIndex + 1);
 		}
-	}
+	};
 
 	const handlePrev = () => {
 		if (currentIndex > 0) {
-			setCurrentIndex(currentIndex - 1)
+			setCurrentIndex(currentIndex - 1);
 		}
-	}
+	};
 
 	return (
 		<>
-			<section className='bg-customGray m-auto py-8 pb-20 block xl:hidden' id='realizacja'>
-				<h2 className='text-mainText font-bold text-3xl text-center '>Proces realizacji</h2>
+			<section
+				className='bg-customGray m-auto py-8 pb-20 block xl:hidden'
+				id='realizacja'
+			>
+				<h2 className='text-mainText font-bold text-3xl text-center '>
+					Proces realizacji
+				</h2>
 
 				<div className='wrapper px-6 sm:px-10 max-w-2xl flex flex-col md:flex-row md:px-14 '>
 					<div className='my-12 md:w-1/2'>
-						<p className='text-xl text-mainText font-semibold md:text-left'>Zobacz co Cię czeka!</p>
+						<p className='text-xl text-mainText font-semibold md:text-left'>
+							Zobacz co Cię czeka!
+						</p>
 						<div className='my-2 space-y-3'>
 							{info.map((item, index) => (
 								<div key={index} className='flex items-start mt-4'>
 									<img src={Check} alt='icon' className='w-6 h-6 mr-2' />
-									<p className='text-thirdText text-lg font-medium'>{item.feature}</p>
+									<p className='text-thirdText text-lg font-medium'>
+										{item.feature}
+									</p>
 								</div>
 							))}
 						</div>
@@ -125,17 +135,19 @@ export default function Implementation() {
 								disabled={currentIndex === 0}
 								className={`flex justify-center items-center text-center space-x-2 ${
 									currentIndex === 0 ? 'opacity-0' : 'opacity-1'
-								}`}>
+								}`}
+							>
 								<img src={ArrowPrevious} alt='back' className='w-3 -pl-2' />
-								<p className='text-mainText text-xl'>Cofnij</p>
+								<p className='text-mainText text-xl font-bold'>Cofnij</p>
 							</button>
 							<button
 								onClick={handleNext}
 								disabled={currentIndex === implementationProcess.length - 1}
 								className={`flex justify-center items-center text-center space-x-2 ${
 									currentIndex === 8 ? 'opacity-0' : 'opacity-1'
-								}`}>
-								<p className='text-mainText text-xl'>Dalej</p>
+								}`}
+							>
+								<p className='text-mainText text-xl font-bold'>Dalej</p>
 								<img src={ArrowNext} alt='next' className='w-3 -pr-2' />
 							</button>
 						</div>
@@ -146,11 +158,20 @@ export default function Implementation() {
 								/9
 							</p>
 							<div
-								className={`rounded-full w-20 h-20 bg-gradient-to-r ${implementationProcess[currentIndex].fade} flex items-center justify-center`}>
-								<img src={implementationProcess[currentIndex].img} alt='icon' className='w-12 h-12' />
+								className={`rounded-full w-20 h-20 bg-gradient-to-r ${implementationProcess[currentIndex].fade} flex items-center justify-center`}
+							>
+								<img
+									src={implementationProcess[currentIndex].img}
+									alt='icon'
+									className='w-12 h-12'
+								/>
 							</div>
-							<h3 className='text-xl font-bold text-mainText my-3'>{implementationProcess[currentIndex].title}</h3>
-							<p className='text-md text-secondText'>{implementationProcess[currentIndex].description}</p>
+							<h3 className='text-xl font-bold text-mainText my-3'>
+								{implementationProcess[currentIndex].title}
+							</h3>
+							<p className='text-md text-secondText'>
+								{implementationProcess[currentIndex].description}
+							</p>
 						</div>
 					</div>
 				</div>
@@ -160,18 +181,27 @@ export default function Implementation() {
 			{/* ===================================================== DESKTOP */}
 			{/* ===================================================== DESKTOP */}
 			{/* ===================================================== DESKTOP */}
-			<section className='bg-customGray m-auto py-8 pb-20 hidden xl:block' id='realizacja2'>
-				<h2 className='text-mainText pb-10 font-bold text-3xl text-center xl:text-4xl'>Proces realizacji</h2>
+			<section
+				className='bg-customGray m-auto py-8 pb-20 hidden xl:block'
+				id='realizacja2'
+			>
+				<h2 className='text-mainText pb-10 font-bold text-3xl text-center xl:text-4xl'>
+					Proces realizacji
+				</h2>
 
 				<div className='wrapper px-16 2xl:px-0'>
 					<div className='grid grid-cols-4 grid-rows-4 gap-10  m-auto'>
 						<div className='my-12 col-span-2'>
-							<p className='text-xl xl:text-3xl text-mainText font-semibold'>Zobacz co Cię czeka!</p>
+							<p className='text-xl xl:text-3xl text-mainText font-semibold'>
+								Zobacz co Cię czeka!
+							</p>
 							<div className='my-2 space-y-3'>
 								{info.map((item, index) => (
 									<div key={index} className='flex items-start mt-8'>
 										<img src={Check} alt='icon' className='w-6 h-6 mr-2' />
-										<p className='text-thirdText text-lg font-medium xl:text-xl'>{item.feature}</p>
+										<p className='text-thirdText text-lg font-medium xl:text-xl'>
+											{item.feature}
+										</p>
 									</div>
 								))}
 							</div>
@@ -188,15 +218,19 @@ export default function Implementation() {
 									(index === 5 && 'col-start-2 row-start-3') ||
 									(index === 6 && 'col-start-1 row-start-3') ||
 									(index === 8 && 'col-span-3')
-								}`}>
+								}`}
+							>
 								<p className='absolute right-6 top-4 text-thirdText font-medium text-lg'>
 									Krok: <span className='font-semibold'>{index + 1}</span>/9
 								</p>
 								<div
-									className={`rounded-full w-20 h-20 bg-gradient-to-r ${step.fade} flex items-center justify-center `}>
+									className={`rounded-full w-20 h-20 bg-gradient-to-r ${step.fade} flex items-center justify-center `}
+								>
 									<img src={step.img} alt='icon' className='w-12 h-12 ' />
 								</div>
-								<h3 className='text-xl font-bold text-mainText my-3'>{step.title}</h3>
+								<h3 className='text-xl font-bold text-mainText my-3'>
+									{step.title}
+								</h3>
 								<p className='text-md text-secondText'>{step.description}</p>
 							</div>
 						))}
@@ -204,5 +238,5 @@ export default function Implementation() {
 				</div>
 			</section>
 		</>
-	)
+	);
 }
