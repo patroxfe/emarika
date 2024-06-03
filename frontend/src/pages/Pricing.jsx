@@ -9,7 +9,7 @@ export default function Pricing() {
 					heading: 'Idealna na początek oraz do podstawowej prezentacji oferty firmy w internecie.',
 					description: 'Cała treść na stronie głównej',
 					leadTime: '3-6 dni',
-					price: '1100',
+					price: '900',
 					subpoints: [
 						'Koncepcja budowy strony',
 						'Szkic strony głównej',
@@ -34,7 +34,7 @@ export default function Pricing() {
 					heading: 'Najczęściej wybierany wariant strony internetowej, standardowa prezentacja firmy w internecie.',
 					description: 'Strona główna + do 5 podstron',
 					leadTime: '5-8 dni',
-					price: '1600',
+					price: '1350',
 					subpoints: [
 						'Koncepcja budowy strony',
 						'Szkic strony głównej i podstron',
@@ -61,7 +61,7 @@ export default function Pricing() {
 						'Idealne rozwiązanie do prezentacji oferty i budowania wizerunku oraz widoczności w Google Twojej firmy.',
 					description: 'Strona główna + do 5 podstron + blog',
 					leadTime: '7-11 dni',
-					price: '2200',
+					price: '1800',
 					subpoints: [
 						'Koncepcja budowy strony',
 						'Szkic strony głównej, podstron, listy artykułów, pojedyńczego artykułu',

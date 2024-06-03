@@ -110,7 +110,7 @@ export default function Nav() {
 			<div className='wrapper flex justify-between items-center'>
 				{isBriefOrTermsOrPrivacy ? (
 					<Link to='/' className='text-xl font-semibold z-50 cursor-pointer'>
-						eMarika.pl
+						<span className='text-blueMain'>e</span>Marika.pl
 					</Link>
 				) : (
 					<h1 className='text-xl font-semibold z-50 cursor-pointer' onClick={() => scrollToSection('header')}>

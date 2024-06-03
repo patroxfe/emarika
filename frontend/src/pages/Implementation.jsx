@@ -176,7 +176,7 @@ export default function Implementation() {
 								))}
 							</div>
 						</div>
-						<div className='relative overflow-hidden row-start-2 col-span-3 rounded bg-[#1b2841ff] [box-shadow:_0px_4px_33px_rgb(0_0_0_/_25%)]'>
+						<div className='relative overflow-hidden row-start-2 col-span-3 rounded bg-[#1b2841ff] [box-shadow:_0px_0px_13px_rgb(0_0_0_/_15%)]'>
 							<div className='implementation-img '></div>
 						</div>
 						{implementationProcess.map((step, index) => (

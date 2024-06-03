@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 export default function Brief() {
 	const [firstName, setFirstName] = useState('')
@@ -13,7 +14,11 @@ export default function Brief() {
 	const [language, setLanguage] = useState('')
 	const [competitors, setCompetitors] = useState('')
 	const [notes, setNotes] = useState('')
+	const [hosting, setHosting] = useState('')
 	const [showPopup, setShowPopup] = useState({ show: false, message: '' })
+
+	const [recap, setRecap] = useState(null)
+	const SITEKEY = '6Ldu8O8pAAAAAAz4sR4SS5K0ouTe_kl27O9dI1zp'
 
 	const handleSubmit = async e => {
 		e.preventDefault()
@@ -24,10 +29,7 @@ export default function Brief() {
 			return
 		}
 		if (!validateEmail(email)) {
-			setShowPopup({
-				show: true,
-				message: 'Nieprawidłowy adres e-mail. Spróbuj ponownie.',
-			})
+			setShowPopup({ show: true, message: 'Nieprawidłowy adres e-mail. Spróbuj ponownie.' })
 			return
 		}
 		if (!validatePhone(phone)) {
@@ -38,17 +40,11 @@ export default function Brief() {
 			return
 		}
 		if (!validateDescription(description)) {
-			setShowPopup({
-				show: true,
-				message: 'Krótki opis... Prosimy chociaż w 3 słowach... :c',
-			})
+			setShowPopup({ show: true, message: 'Krótki opis... Prosimy chociaż w 3 słowach... :c' })
 			return
 		}
 		if (!validateCheckbox()) {
-			setShowPopup({
-				show: true,
-				message: 'Proszę zaznaczyć wszystkie pytania.',
-			})
+			setShowPopup({ show: true, message: 'Proszę zaznaczyć wszystkie pytania.' })
 			return
 		}
 		if (!validateLanguage()) {
@@ -66,11 +62,25 @@ export default function Brief() {
 			formData.append('content', content)
 			formData.append('logo', logo)
 			formData.append('language', language)
+			formData.append('hosting', hosting)
 			formData.append('competitors', competitors)
 			formData.append('notes', notes)
 
 			await axios.post('/form-handler.php', formData)
 			setShowPopup({ show: true, message: 'Dane zostały wysłane pomyślnie!' })
+
+			// Resetowanie stanu
+			setFirstName('')
+			setEmail('')
+			setPhone('')
+			setDescription('')
+			setSocialMedia('')
+			setContent('')
+			setLogo('')
+			setLanguage('')
+			setHosting('')
+			setCompetitors('')
+			setNotes('')
 		} catch (error) {
 			setShowPopup({
 				show: true,
@@ -87,7 +97,8 @@ export default function Brief() {
 		const socialMediaChecked = document.querySelectorAll('input[name=media]:checked').length > 0
 		const contentChecked = document.querySelectorAll('input[name=material]:checked').length > 0
 		const logoChecked = document.querySelectorAll('input[name=logo]:checked').length > 0
-		return socialMediaChecked && contentChecked && logoChecked
+		const hostingChecked = document.querySelectorAll('input[name=hosting]:checked').length > 0
+		return socialMediaChecked && contentChecked && logoChecked && hostingChecked
 	}
 	const validateLanguage = () => language.length >= 3
 
@@ -216,7 +227,7 @@ export default function Brief() {
 					</div>
 
 					<div>
-						<label className='block text-xl font-medium mb-2'>Czy posiadasz treści na stronę?</label>
+						<label className='block text-xl font-medium mb-2'>Czy posiadasz treści (tekst, zdjęcia) na stronę?</label>
 						<div className='space-y-2'>
 							<div>
 								<label className='inline-flex items-center text-black'>
@@ -239,7 +250,7 @@ export default function Brief() {
 										value='Nie, potrzebuję pomocy'
 										className='form-radio h-5 w-5 focus:ring-offset-2 focus:ring-mainText'
 									/>
-									<span className='ml-2'>Nie, potrzebuję pomocy</span>
+									<span className='ml-2'>Nie, potrzebuję pomocy w zorganizowaniu</span>
 								</label>
 							</div>
 						</div>
@@ -267,7 +278,7 @@ export default function Brief() {
 										name='logo'
 										className='form-radio h-5 w-5 text-indigo-600 focus:ring-offset-2 focus:ring-mainText'
 									/>
-									<span className='ml-2'>Nie, chciałbym abyście stworzyli je dla mnie</span>
+									<span className='ml-2'>Nie, chciałbym abyście mi je stworzyli</span>
 								</label>
 							</div>
 							<div>
@@ -278,7 +289,48 @@ export default function Brief() {
 										name='logo'
 										className='form-radio h-5 w-5 text-indigo-600 focus:ring-offset-2 focus:ring-mainText'
 									/>
-									<span className='ml-2'>Nie</span>
+									<span className='ml-2'>Nie potrzebuję</span>
+								</label>
+							</div>
+						</div>
+					</div>
+
+					{/* ========================== Kasa =================== */}
+
+					<div>
+						<label className='block text-xl font-medium mb-2'>Czy posiadasz własny hosting i domenę?</label>
+						<div className='space-y-2'>
+							<div>
+								<label className='inline-flex items-center text-black'>
+									<input
+										onChange={e => setHosting(e.target.value)}
+										type='radio'
+										name='hosting'
+										className='form-radio h-5 w-5 text-indigo-600 focus:ring-offset-2 focus:ring-mainText'
+									/>
+									<span className='ml-2'>Nie, ale załatwię to we własnym zakresie</span>
+								</label>
+							</div>
+							<div>
+								<label className='inline-flex items-center text-black'>
+									<input
+										onChange={e => setHosting(e.target.value)}
+										type='radio'
+										name='hosting'
+										className='form-radio h-5 w-5 text-indigo-600 focus:ring-offset-2 focus:ring-mainText'
+									/>
+									<span className='ml-2'>Nie, chcę abyście uwzględnili to w moim projekcie</span>
+								</label>
+							</div>
+							<div>
+								<label className='inline-flex items-center text-black'>
+									<input
+										onChange={e => setHosting(e.target.value)}
+										type='radio'
+										name='hosting'
+										className='form-radio h-5 w-5 text-indigo-600 focus:ring-offset-2 focus:ring-mainText'
+									/>
+									<span className='ml-2'>Tak</span>
 								</label>
 							</div>
 						</div>
@@ -307,8 +359,10 @@ export default function Brief() {
 						/>
 					</div>
 
-					<div className='flex items-center'>
+					<div className='flex items-center flex-col space-y-5'>
+						<ReCAPTCHA sitekey={SITEKEY} onChange={val => setRecap(val)} />
 						<button
+							disabled={!recap}
 							type='submit'
 							className='mx-auto flex justify-center items-center w-40 h-14 rounded py-2 px-4 bg-blueMain font-medium text-xl hover:bg-mainText duration-300 text-white focus:ring-2 focus:ring-offset-2 focus:ring-mainText'>
 							Wyślij
